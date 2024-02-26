@@ -1,5 +1,5 @@
 # Hydrax 🐉
-A zero-copy multiprocess dataloader for Jax.
+A zero-copy multiprocess dataloader for Jax. Built for [Project Redrocket](https://huggingface.co/RedRocket/).
 
 ## Installation
 
