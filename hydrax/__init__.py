@@ -549,7 +549,7 @@ class Dataloader:
         for i in range(len(self._loaders)):
             loader = self._mpctx.Process(
                 target=_run_loader,
-                name=f"jdl-loader-{i}",
+                name=f"hydrax-loader-{i}",
                 args=loader_args,
                 daemon=True
             )
@@ -559,14 +559,14 @@ class Dataloader:
 
         self._completion_thread = Thread(
             target=self._run_completion,
-            name="jdl-completion",
+            name="hydrax-completion",
             daemon=True
         )
         self._completion_thread.start()
 
         self._submission_thread = Thread(
             target=self._run_submission,
-            name="jdl-submission",
+            name="hydrax-submission",
             daemon=True
         )
         self._submission_thread.start()
