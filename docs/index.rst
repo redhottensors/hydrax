@@ -4,8 +4,5 @@
    :recursive:
 
    hydrax
-   hydrax.tqdm
-
-:ref:`genindex`
 
 See :class:`hydrax.Dataloader` for example usage and documentation.

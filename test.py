@@ -12,8 +12,7 @@ def loader(data: int, arrays: MappingProxyType[str, np.ndarray], seed: int | Non
         for j in range(4):
             arrays["array"][i][j] = data + (i * 100 + j)
 
-    # return { "my_data_was": data }
-    return "hello"
+    return { "my_data_was": data }
 
 if __name__ == "__main__":
     def verify(base: int, batch: Dict[str, Any]) -> None:

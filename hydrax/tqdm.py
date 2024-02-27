@@ -1,11 +1,11 @@
-"""Provides :func:`tbatches`, which wraps a :class:`hydrax.Dataloader` with tqdm progress bars."""
+"""Provides :func:`tbatches`, which wraps a :class:`hydrax.Dataloader` with `tqdm <https://github.com/tqdm/tqdm>`_ progress bars."""
 
 from tqdm import tqdm
 from hydrax import Dataloader
 from typing import Iterable, Dict, Any
 
 def tbatches(dl: Dataloader, report_interval: int = 0, desc: str = "train", **kwargs) -> Iterable[Dict[str, Any]]:
-    """Wraps a :class:`hydrax.Dataloader` with tqdm progress bars.
+    """Wraps a :class:`hydrax.Dataloader` with `tqdm <https://github.com/tqdm/tqdm>`_ progress bars.
 
     The Dataloader must have been started via a ``with`` block.
 

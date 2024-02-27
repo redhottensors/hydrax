@@ -3,7 +3,6 @@
 from ._trackedbuffer import TrackedBuffer
 
 import traceback
-import sys
 import time
 import queue
 import gc
@@ -11,21 +10,27 @@ import os
 import warnings
 
 from signal import signal, SIGINT
-from types import MappingProxyType
 from threading import Thread
-from random import Random
+from types import MappingProxyType
 
 import multiprocessing
 from multiprocessing import Process
 from multiprocessing.shared_memory import SharedMemory
 
 import numpy as np
+from numpy.random import Generator, PCG64
+
 import jax # type: ignore[import-not-found]
 import jax.numpy as jnp # type: ignore[import-not-found]
 
 from typing import Dict, List, Tuple, Iterable, Callable, Self, Generic, Any, TypeVar
 
-D = TypeVar('D')
+class BatchTimeoutError(TimeoutError):
+    """Raised if no batch has been produced for some time.
+
+    Controlled by the ``timeout_sec`` argument to :class:`Dataloader`.
+    """
+    pass
 
 def is_worker() -> bool:
     """Returns ``True`` if running in a subprocess.
@@ -40,7 +45,7 @@ def _as_seq(obj: Any) -> Any:
         return list(obj.items())
 
     if isinstance(obj, str):
-        raise TypeError(f"str is not an acceptable sequence type")
+        return [obj]
 
     if hasattr(obj, "__getitem__") and hasattr(obj, "__len__"):
         return obj
@@ -52,7 +57,7 @@ def _as_seq(obj: Any) -> Any:
 
 class _BatchMemory(TrackedBuffer):
     def __new__(cls, dl: "Dataloader", shm: SharedMemory):
-        return super().__new__(cls, shm.buf)
+        return super().__new__(cls , shm.buf) # type: ignore[arg-type]
 
     def __init__(self, dl: "Dataloader", shm: SharedMemory):
         self.dl = dl
@@ -81,16 +86,62 @@ class _BatchMemory(TrackedBuffer):
         self.dl._recycle_batch(self.shm)
         self.shm = None
 
+class _LoaderMemory(TrackedBuffer):
+    def __new__(cls, shm: SharedMemory):
+        return super().__new__(cls, shm.buf) # type: ignore[arg-type]
+
+    def __init__(self, buf: Any):
+        self._rc = 0
+        self._frozen = False
+
+    def _ref(self) -> None:
+        if self._frozen:
+            raise Exception(f"loader memory has been transferred")
+
+        self._rc += 1
+
+    def _deref(self) -> None:
+        self._rc -= 1
+
+    def freeze(self) -> None:
+        self._frozen = True
+
+        if self._rc > 0:
+            warnings.warn("loader memory has dangling reference", RuntimeWarning)
+
+D = TypeVar('D')
 class DataGroup(Generic[D]):
     """Represents a group of data which share the same descriptor, batch size, and array shapes.
 
+    .. caution::
+        Don't derive from DataGroup, and do not modify your dataset after placing it in a DataGroup.
+
     :param batch_size: The batch size for loading and processing the data.
-    :param arrays: Shape and datatype definitions for all arrays which shall be provided to the loader. Do not include the leading batch dimension.
-    :param data: A list of all data descriptors for this group. Descriptors are passed to the loader to identify the data item to load.
-        Any finite sequence-like object or iterator is acceptable. The elements must pickleable, as they are sent directly to loader processes.
+    :param arrays: Shape and datatype definitions for all arrays in a batch. Do not include the leading batch
+        dimension, since that is specified by ``batch_size``. These arrays will be presented to the loader for
+        zero-copy initialization.
+    :param data: A list of all data descriptors for this group. Descriptors are passed to the loader to identify
+        the data item to load. Any finite sequence-like object or iterator is acceptable. The elements must
+        pickleable, as they are sent directly to loader processes.
+
+    .. tip::
+        If you want to repeat a DataGroup multiple times per epoch, use :func:`clone`. This avoids creating
+        multiple copies of your dataset and allows the data to be suffled independently.
+
+    .. warning::
+        If your dataset is an iterable and not otherwise indexable, it will be materialized by the DataGroup.
+        If you have hundreds of thousands of items, consider using a `dataframe library <https://pandas.pydata.org/docs/>`_.
     """
 
-    def __init__(self, batch_size: int, arrays: Dict[str, Tuple[Tuple[int, ...], np.dtype]], data: Iterable[D]):
+    def __init__(
+        self,
+        batch_size: int,
+        arrays: Dict[str, Tuple[Tuple[int, ...], np.dtype]],
+        data: Iterable[D]
+    ):
+        if type(self) is not DataGroup:
+            warnings.warn(f"{type(self).__name__} derives from hydrax.DataGroup. This is not supported.", SyntaxWarning)
+
         self._data = _as_seq(data)
         self._batch_size = min(len(self._data), batch_size)
 
@@ -98,19 +149,17 @@ class DataGroup(Generic[D]):
             raise ValueError("batch size must be at least 1")
 
         self._allocsz = 0
-
         self._shapes: Dict[str, Tuple[Tuple[int, ...], np.dtype, int, int]] = { }
 
         for (key, (shape, dtype)) in arrays.items():
             dtype = np.dtype(dtype)
             shape = (self._batch_size, *shape)
-
-            self._allocsz += (-self._allocsz) % dtype.alignment
             count = np.prod(shape).item()
 
             if count < 1:
                 raise ValueError(f"invalid shape for array '{key}': {shape}")
 
+            self._allocsz += (-self._allocsz) % dtype.alignment
             self._shapes[key] = (shape, dtype, self._allocsz, count)
             self._allocsz += count * dtype.itemsize
 
@@ -135,12 +184,12 @@ class DataGroup(Generic[D]):
 
     @property
     def arrays(self) -> MappingProxyType[str, Tuple[Tuple[int, ...], np.dtype, int, int]]:
-        """Returns the shape and dtype definitions for all arrays provided to the loader. Includes the leading batch dimension."""
+        """The shape and dtype definitions for all arrays provided to the loader. Includes the leading batch dimension."""
         return  MappingProxyType(self._shapes)
 
     @property
     def memory_size(self) -> int:
-        """Returns the allocation size, in bytes, of a single batch."""
+        """The allocation size, in bytes, of a single batch."""
         return self._allocsz
 
     def split(
@@ -151,14 +200,14 @@ class DataGroup(Generic[D]):
     ) -> Tuple["DataGroup[D]", "DataGroup[D]"]:
         """Splits a DataGroup into two parts, optionally with different batch sizes.
 
-        The first part contains ``at`` elements (maximum index ``at - 1``), and the second part contains the rest.
-
-        This function is useful to split a dataset into training and validation sets.
-
         :param at: Index to split the data at, see above.
         :param rebatch_first: New batch size for the first group. If not specified, the current batch size is retained.
         :param rebatch_second: New batch size for the second group. If not specified, the current batch size is retained.
         :return: A tuple consisting of the first group and the second group.
+
+        The first part contains ``at`` elements (maximum index ``at - 1``), and the second part contains the rest.
+
+        This function is useful to split a dataset into training and validation sets.
         """
 
         if rebatch_first is None:
@@ -174,18 +223,36 @@ class DataGroup(Generic[D]):
             DataGroup(rebatch_second, shapes, self._data[at:]),
         )
 
+    def clone(self, rebatch: int | None = None) -> "DataGroup[D]":
+        """Creates an identical copy of the DataGroup, optionally with a different batch size.
+
+        :param rebatch: The new batch size for the clone. If not specified, the current batch size is retained.
+
+        This function is useful to repeat a given group of data multiple times within each epoch. You must arrange
+        the clones according to your interleaving preferences and pass them to :func:`Dataloader._init_`.
+        """
+
+        if rebatch is None:
+            rebatch = self._batch_size
+
+        shapes = {key: (shape[1:], dtype) for (key, (shape, dtype, _, _)) in self._shapes.items()}
+
+        return DataGroup(rebatch, shapes, self._data)
+
     def _add_arrays(self, batch: Dict[str, Any], memory: _BatchMemory) -> None:
         for (key, (shape, dtype, offset, count)) in self._shapes.items():
             batch[key] = jnp.reshape(jnp.frombuffer(memory, dtype, count, offset), shape)
 
 class _GroupState:
     def __init__(self, data: DataGroup[D], groupid: int, validation: bool):
+        if not isinstance(data, DataGroup):
+            raise TypeError(f"data of type {type(data).__name__} is not in a hydrax.DataGroup")
+
         self.data = data
         self.groupid = groupid
         self.validation = validation
 
-        self._shuffled = False
-        self._indices = [index for index in range(len(data))]
+        self._indices: np.ndarray | None = None
         self._cursor = 0
         self._used = 0.0
 
@@ -196,26 +263,25 @@ class _GroupState:
     def reset(self) -> None:
         self._cursor = 0
         self._used = 0.0
+        self._indices = None
 
-        if self._shuffled:
-            for idx in range(len(self._indices)):
-                self._indices[idx] = idx
-
-            self._shuffled = False
-
-    def shuffle(self, rng: Random) -> None:
+    def shuffle(self, rng: Generator) -> None:
         self._cursor = 0
         self._used = 0.0
-        self._shuffled = True
 
+        self._indices = np.arange(len(self.data))
         rng.shuffle(self._indices)
 
-    def reserve(self) -> List[int] | None:
+    def reserve(self) -> Iterable[int] | None:
         end = self._cursor + self.data.batch_size
         if end > len(self.data):
             return None
 
-        indices = self._indices[self._cursor:end]
+        if self._indices is None:
+            indices = range(self._cursor, end) # type: Iterable[int]
+        else:
+            indices = self._indices[self._cursor:end]
+
         self._cursor = end
 
         if end + self.data.batch_size > len(self.data):
@@ -250,13 +316,17 @@ class _BatchLoader:
         self._next_ready = False
         self._chained: _BatchLoader | None = None
 
-    def start(self, indices: List[int]) -> None:
-        assert(len(indices) == self._size)
-
+    def start(self, indices: Iterable[int]) -> None:
         seed = self._batch.get("_seed") # type: ignore[union-attr]
 
-        for idx in range(self._size):
-            self._dl._load(self, idx, indices[idx], seed + idx if seed is not None else None)
+        if seed is not None:
+            for (batch_idx, data_idx) in enumerate(indices):
+                self._dl._load(self, batch_idx, int(data_idx), seed + batch_idx)
+        else:
+            for (batch_idx, data_idx) in enumerate(indices):
+                self._dl._load(self, batch_idx, int(data_idx), None)
+
+        assert(batch_idx == self._size - 1)
 
     def ready(self) -> None:
         self._prior_ready = True
@@ -325,6 +395,9 @@ class _BatchLoader:
 class Dataloader:
     """A zero-copy multiprocess JAX dataloader.
 
+    .. caution::
+        Don't derive from ``Dataloader``. Everything customizable is provided as an argument.
+
     :param loader_func: A callable which accepts a :class:`DataGroup` data descriptor, dictionary of arrays
         (as specified by the DataGroup) corresponding to a single batch element, and an integer seed for use in
         random augmentation and returns a (possibly empty) dictionary of additional data. This callable is called
@@ -337,7 +410,8 @@ class Dataloader:
         sending any additional arrays via the return dictionary. Instead, add additional zero-copy arrays to the
         DataGroups and fill them in. If for some reason an element cannot be loaded, you must raise an exception or
         allow one to propagate, which will eventually result in the corresponding batch being dropped.
-    :param training: DataGroups for training. A single pass through all training DataGroups constitutes an epoch.
+    :param training: A :class:`DataGroup` for training, or any iterable of them. A single pass through all training
+        DataGroups constitutes an epoch.
     :param validation: An optional tuple specifying a validation mode, interval, and data. The validation mode can
         be either ``"batch"`` or ``"epoch"``, and the interval is how many batches or epochs between validation runs.
     :param loader_depth: The maximum number of batches that can exist at any point in time. Memory usage is
@@ -364,6 +438,12 @@ class Dataloader:
         permutes all epochs including the first.
     :param seed: Specifies a seed used for randomness. This seed is used to deterministically calculate permutations
         for ``shuffle_groups`` and the augmentation seeds passed to ``loader_func``. The default is ``0``.
+    :param timeout_sec: Raise :class:`BatchTimeoutError` if no batches have completed within the specified timeout.
+        The default is ``60``, and ``0`` or less disables.
+
+    .. tip::
+        In Hydrax, a single Dataloader is usually responsible for producing both your training and validation batches,
+        in order to conserve resources and ensure perfectly smooth loading throughout.
 
     Example::
 
@@ -371,7 +451,7 @@ class Dataloader:
 
         def my_loader(data, arrays, seed):
             # load data from data source into arrays, optionally augmenting using 'seed'.
-            # if 'seed' is None this is a validation batch
+            # if 'seed' is None this is a data from a validation batch
             # return any additional data for the batch
 
         if __name__ == "main":
@@ -399,7 +479,7 @@ class Dataloader:
                     else:
                         run_training_batch(batch)
 
-    Each batch produced by :func:`__next__` has the following structure::
+    Each batch produced by :func:`__next__` is a dict with the following structure::
 
         {
             "_validation": bool, # True if this is a validation batch, False if this is a training batch
@@ -412,7 +492,7 @@ class Dataloader:
             "_seed": int,        # a seed for randomness, unique to this batch
 
             # present for validation batches only
-            "_validation_epoch": int,       # the currrent validation epoch, always starting at 0
+            "_validation_epoch": int,       # the current validation epoch, always starting at 0
             "_validation_epoch_batch": int, # the current batch within this validation epoch, starting at 0
             "_validation_batch": int,       # the overall validation batch number
 
@@ -425,6 +505,29 @@ class Dataloader:
             "additional_key": [ value_0, ... ], # len = batch_size
             ...,
         }
+
+    .. important::
+        Read the documentation for your ``loader_func`` carefully. If you receive a warning from Hydrax about
+        your loader, you should fix your code. Failure to do this could result in your batch data changing out
+        from underneath you, leading to significant training issues such as NaNs.
+
+    .. warning::
+        Do not attempt to construct a Dataloader inside a loader process. Ensure your training code is guarded
+        with ``if __name__ == '__main__':``, or is otherwise prevented from running. As a last resort, you can
+        check :func:`hydrax.is_worker` and bail.
+
+    .. note::
+        The Dataloader installs a handler for ``KeyboardInterrupt`` (Ctrl+C / SIGINT), which stops the flow of
+        batches as soon as possible. After the dataloader has completed, you can check if this occurred by
+        reading its ``interrupted`` property. You may want to save a checkpoint along with the number of the last
+        completed batch, so that you can resume from where you left off with ``start_at``.
+
+        If you send a second ``KeyboardInterrupt``, Hydrax will raise a ``KeyboardInterrupt`` at the beginning
+        of the next batch. This exception may cause you to lose progress unless you or a framework takes care
+        to save a checkpoint in response.
+
+        If you send a third ``KeyboardInterrupt``, the Python interpreter is immediately stopped and control is
+        returned to you. You will lose all progress since the last checkpoint.
     """
 
     def __init__(
@@ -439,7 +542,11 @@ class Dataloader:
         interleave_groups: bool = True,
         shuffle_groups: str = "later", # ("none" | "later" | "all")
         seed: int = 0,
+        timeout_sec: int = 60
     ):
+        if type(self) is not Dataloader:
+            warnings.warn("{type(self).__name__} derives from hydrax.Dataloader. This is not supported.", SyntaxWarning)
+
         if is_worker():
             raise Exception("Dataloader cannot run in a worker process.")
 
@@ -452,6 +559,7 @@ class Dataloader:
         self._interleave = interleave_groups
         self._shuffle = shuffle_groups
         self._seed = seed
+        self._timeout = timeout_sec if timeout_sec > 0 else 31536000 # okay, not technically disabled, but this is 1 year.
 
         if self._end_at[0] not in ('never', 'epoch', 'batch'):
             raise ValueError("end_at endpoint must be 'never', 'epoch', or 'batch'")
@@ -479,9 +587,12 @@ class Dataloader:
             self._vmode = "none"
             self._batches_per_validation = 0
 
+        self._interrupt = False
+        self._abort = False
+        self._failed = False
+
         self._setup = False
         self._running = False
-        self._interrupt = False
         self._validating = False
 
         self._idle_usec = 0
@@ -513,6 +624,7 @@ class Dataloader:
 
     def __enter__(self) -> Self:
         assert(not self._setup)
+        assert(not self._failed)
 
         self._setup = True
         self._running = True
@@ -576,6 +688,13 @@ class Dataloader:
     def __exit__(self, exc_type, exc_value, exc_tb) -> None:
         assert(self._setup)
 
+        if self._failed:
+            self._setup = False
+
+            signal(SIGINT, self._sigint)
+            self._sigint = None
+            return
+
         if self._running:
             self._interrupt = True
             self.__next__()
@@ -606,9 +725,10 @@ class Dataloader:
 
     def __next__(self) -> Dict[str, Any]:
         assert(self._running)
+        assert(not self._failed)
 
         if self._interrupt:
-            while self._batches.get() is not None:
+            while self._get_batch() is not None:
                 pass
 
             self._running = False
@@ -618,7 +738,7 @@ class Dataloader:
             batch = self._batches.get_nowait()
         except queue.Empty:
             start = time.monotonic_ns()
-            batch = self._batches.get()
+            batch = self._get_batch()
             end = time.monotonic_ns()
 
             if batch is not None and not self._first_batch:
@@ -631,6 +751,20 @@ class Dataloader:
             raise StopIteration
 
         return batch
+
+    def _get_batch(self) -> Dict[str, Any] | None:
+        for _ in range(self._timeout):
+            try:
+                return self._batches.get(timeout=1)
+            except queue.Empty:
+                pass
+
+            if self._abort:
+                self._failed = True
+                raise KeyboardInterrupt
+
+        self._failed = True
+        raise BatchTimeoutError(f"no batches have been produced in {self._timeout} seconds")
 
     @property
     def batches_per_epoch(self) -> int:
@@ -648,15 +782,23 @@ class Dataloader:
         return self._batches_per_validation
 
     @property
+    def interrupted(self) -> bool:
+        """``True`` if this dataloader has been interrupted, and ``False`` otherwise."""
+        return self._interrupt
+
+    @property
     def first_batch(self) -> int:
-        """Returns the index of the first batch to load. Controlled by the ``start_at`` argument."""
+        """The index of the first batch to load.
+
+        Controlled by the ``start_at`` argument.
+        """
         return self._start_at[0] * self._batches_per_epoch + self._start_at[1]
 
     @property
     def last_batch(self) -> int | None:
-        """Returns the index of the final batch to load. Controlled by the ``end_at`` argument.
+        """The index of the final batch to load, or ``None`` if no end point was specified.
 
-        Will be ``None`` if no end point was specified.
+        Controlled by the ``end_at`` argument.
         """
         match self._end_at[0]:
             case "batch":
@@ -676,7 +818,7 @@ class Dataloader:
         ``loader_depth`` to allow loaders to work ahead in order to amortize longer loading times.
 
         :func:`hydrax.tqdm.tbatches` consumes this metric if ``report_interval`` is specified. Do not use it if you
-        are using ``tbatches`` for stall reporting.
+        are using ``tbatches`` reporting.
         """
 
         value = self._idle_usec
@@ -709,10 +851,7 @@ class Dataloader:
             loader.load_failed(batch_idx)
 
     def _run_submission(self) -> None:
-        remaining = len(self._memories)
-
-        if not self._submit_batches():
-            remaining -= 1
+        self._submit_batches()
 
         self._chain_to = None
 
@@ -727,12 +866,12 @@ class Dataloader:
         self._completion_thread.join() # type: ignore[union-attr]
         self._completion_thread = None
 
-        for _ in range(remaining):
+        for _ in range(len(self._memories)):
             self._buffers.get()
 
         self._batches.put(None)
 
-    def _submit_batches(self) -> bool:
+    def _submit_batches(self) -> None:
         (epoch, seek) = self._start_at
         batch = epoch * self._batches_per_epoch
 
@@ -751,7 +890,7 @@ class Dataloader:
                             "_batch": batch,
                             "_seed": self._seed + (batch * self._maxbatch),
                         }):
-                            return False
+                            return
                     else:
                         seek -= 1
 
@@ -760,26 +899,26 @@ class Dataloader:
 
                     if seek == 0 and self._vmode == "batch" and batch % self._vinterval == 0:
                         if not self._submit_validation():
-                            return False
+                            return
 
                     if self._end_at[0] == "batch" and batch == self._end_at[1]:
-                        return True
+                        return
 
             epoch += 1
 
             if seek == 0 and self._vmode == "epoch" and epoch % self._vinterval == 0:
                 if not self._submit_validation():
-                    return False
+                    return
 
             if self._end_at[0] == "epoch" and epoch == self._end_at[1]:
-                return True
+                return
 
     def _init_groups(self, epoch: int) -> None:
         if self._shuffle == "none" or (self._shuffle == "later" and epoch == 0):
             for group in self._tgroups:
                 group.reset()
         else:
-            rng = Random(self._seed + epoch)
+            rng = Generator(PCG64(self._seed + epoch))
             for group in self._tgroups:
                 group.shuffle(rng)
 
@@ -819,10 +958,20 @@ class Dataloader:
         self._vepoch += 1
         return True
 
-    def _chain_load(self, group: _GroupState, indices: List[int], info: Dict[str, Any]) -> bool:
-        shm = self._buffers.get()
-        if self._interrupt:
-            return False
+    def _chain_load(self, group: _GroupState, indices: Iterable[int], info: Dict[str, Any]) -> bool:
+        shm = None
+
+        while shm is None:
+            try:
+                shm = self._buffers.get(timeout=1)
+            except queue.Empty:
+                pass
+
+            if self._interrupt:
+                if shm is not None:
+                    self._buffers.put(shm)
+
+                return False
 
         loader = _BatchLoader(self, shm, group, info)
         loader.start(indices)
@@ -849,8 +998,14 @@ class Dataloader:
         self._buffers.put(shm)
 
     def _handle_sigint(self, signum, frame) -> None:
-        if not self._interrupt:
-            print("[hydrax] KeyboardInterrupt")
+        if self._abort:
+            print("[hydrax] KeyboardInterrupt: terminating")
+            os._exit(1)
+        elif self._interrupt:
+            print("[hydrax] KeyboardInterrupt: aborting, repeat to terminate")
+            self._abort = True
+        else:
+            print("[hydrax] KeyboardInterrupt: interrupting, repeat to abort")
             self.interrupt()
 
 def _run_loader(
@@ -873,46 +1028,40 @@ def _run_loader(
 
             try:
                 shapes = group_shapes[group_id]
-                buffer = memories[memory_name].buf
+                buffer = _LoaderMemory(memories[memory_name])
 
                 result = loader(data, MappingProxyType({
-                    key: np.frombuffer(buffer, dtype, count, offset).reshape(shape)[batch_idx]
+                    key: np.frombuffer(buffer, dtype, count, offset).reshape(shape)[batch_idx] # type: ignore[call-overload]
                     for (key, (shape, dtype, offset, count)) in shapes.items()
                 }), seed)
 
-                if not isinstance(result, dict):
-                    raise ValueError(f"loader produced a non-dict result of type: {type(result).__name__}")
+                try:
+                    if not isinstance(result, dict):
+                        raise ValueError(f"loader produced a non-dict result of type: {type(result).__name__}")
 
-                for key, value in result.items():
-                    if key.startswith("_"):
-                        raise ValueError(f"loader produced reserved key: '{key}'")
+                    for key, value in result.items():
+                        try:
+                            if key.startswith("_"):
+                                raise ValueError(f"loader produced reserved key: '{key}'")
 
-                    if key in shapes:
-                        raise ValueError(f"loader produced conflicting key: '{key}'")
+                            if key in shapes:
+                                raise ValueError(f"loader produced conflicting key: '{key}'")
 
-                    if isinstance(value, np.ndarray) or isinstance(value, jax.Array):
-                        warnings.warn(f"loader produced an array type with key: '{key}' ({type(value).__name__})", RuntimeWarning)
+                            if isinstance(value, np.ndarray) or isinstance(value, jax.Array):
+                                warnings.warn(f"loader produced an array type with key: '{key}' ({type(value).__name__})", RuntimeWarning)
+                        finally:
+                            del value
 
-                completion_queue.put((sid, result))
-
-                del result
+                    buffer.freeze()
+                    completion_queue.put((sid, result))
+                finally:
+                    del result, buffer
             except:
                 completion_queue.put((sid, None))
 
                 print(f"[hydrax] exception while loading data item: {data}")
                 traceback.print_exc()
     finally:
-        # these may be holding on to a shm if the user is misbehaving
-        try:
-            del result
-        except UnboundLocalError:
-            pass
-
-        try:
-            del value
-        except UnboundLocalError:
-            pass
-
         gc.collect()
 
         for memory in memories.values():
