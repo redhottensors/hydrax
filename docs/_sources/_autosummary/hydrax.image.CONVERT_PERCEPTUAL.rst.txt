@@ -1,0 +1,6 @@
+hydrax.image.CONVERT\_PERCEPTUAL
+================================
+
+.. currentmodule:: hydrax.image
+
+.. autodata:: CONVERT_PERCEPTUAL

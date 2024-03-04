@@ -1,0 +1,6 @@
+hydrax.is\_worker
+=================
+
+.. currentmodule:: hydrax
+
+.. autofunction:: is_worker

@@ -1,0 +1,35 @@
+hydrax.DataGroup
+================
+
+.. currentmodule:: hydrax
+
+.. autoclass:: DataGroup
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~DataGroup.clone
+      ~DataGroup.split
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DataGroup.arrays
+      ~DataGroup.batch_size
+      ~DataGroup.batches
+      ~DataGroup.memory_size
+   
+   

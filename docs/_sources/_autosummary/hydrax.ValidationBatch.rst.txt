@@ -1,0 +1,42 @@
+hydrax.ValidationBatch
+======================
+
+.. currentmodule:: hydrax
+
+.. autoclass:: ValidationBatch
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~ValidationBatch.get_additional
+      ~ValidationBatch.get_array
+      ~ValidationBatch.get_data
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ValidationBatch.additional
+      ~ValidationBatch.arrays
+      ~ValidationBatch.data
+      ~ValidationBatch.group
+      ~ValidationBatch.indices
+      ~ValidationBatch.is_training
+      ~ValidationBatch.is_validation
+      ~ValidationBatch.validation_batch_num
+      ~ValidationBatch.validation_epoch
+      ~ValidationBatch.validation_epoch_batch
+   
+   

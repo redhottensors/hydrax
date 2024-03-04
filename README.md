@@ -58,34 +58,15 @@ if __name__ == "main":
 In Hydrax, a single Dataloader is usually responsible for producing both your training and validation batches,
 in order to conserve resources and ensure perfectly smooth loading throughout.
 
-Each batch produced by the ``Dataloader`` is a ``dict`` with the following structure:
+Each batch produced by the ``Dataloader`` is either a ``TrainingBatch`` instance or a ``ValidationBatch`` instance,
+which both inherit the common functionality of ``Batch``.
 
-```python
-{
-    "_validation": bool, # True if this is a validation batch
-    "_group": int,       # index of the source DataGroup, in the order specified to __init__
-
-    # present for training batches only (_validation = False)
-    "_epoch": int,       # the current epoch, starting at 0
-    "_epoch_batch": int, # the current batch within this epoch, starting at 0
-    "_batch": int,       # the overall batch number, not including validation batches
-    "_seed": int,        # a seed for randomness, unique to this batch
-
-    # present for validation batches only (_validation = True)
-    "_validation_epoch": int,       # the current validation epoch, always starting at 0
-    "_validation_epoch_batch": int, # the current batch within this validation epoch, starting at 0
-    "_validation_batch": int,       # the overall validation batch number
-
-    # for each array specified by the current DataGroup
-    "<array_name>": jax.Array, # dim = (batch_size, ...)
-    ...,
-
-    # for each additional data key returned by the loaders
-    # if the loader did not return the key for a specific item, its corresponding element is None
-    "<additional_key>": [ ... ], # len = batch_size
-    ...,
-}
-```
+The most important properties of a ``Batch`` are:
+* ``arrays`` -- ``{ 'array_name': jax.Array, ... }``, corresponding to each array defined by the source ``DataGroup``.
+    The first dimension of the array is the batch size.
+* ``additional`` -- ``{ 'key': [item_0_value, ...] }``, corresponding to any additional data returned by your loader
+    function. Each list's ``len`` is the batch size. If no corresponding item was returned, the element is ``None``.
+* ``data`` -- A proxy type to the original data descriptors for each item, with length equal to the batch size.
 
 ### Loader Processes
 

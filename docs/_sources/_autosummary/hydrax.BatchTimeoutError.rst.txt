@@ -1,0 +1,6 @@
+hydrax.BatchTimeoutError
+========================
+
+.. currentmodule:: hydrax
+
+.. autoexception:: BatchTimeoutError

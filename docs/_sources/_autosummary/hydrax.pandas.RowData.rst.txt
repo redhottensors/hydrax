@@ -1,0 +1,32 @@
+hydrax.pandas.RowData
+=====================
+
+.. currentmodule:: hydrax.pandas
+
+.. autoclass:: RowData
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __add__, __mul__
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :nosignatures:
+   
+      ~RowData.count
+      ~RowData.index
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RowData.dataframe
+   
+   

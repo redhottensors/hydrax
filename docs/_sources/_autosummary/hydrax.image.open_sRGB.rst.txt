@@ -1,0 +1,6 @@
+hydrax.image.open\_sRGB
+=======================
+
+.. currentmodule:: hydrax.image
+
+.. autofunction:: open_sRGB

@@ -1,0 +1,6 @@
+hydrax.image.CONVERT\_RELATIVE
+==============================
+
+.. currentmodule:: hydrax.image
+
+.. autodata:: CONVERT_RELATIVE

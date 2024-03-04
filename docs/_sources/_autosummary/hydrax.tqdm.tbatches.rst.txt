@@ -1,0 +1,6 @@
+hydrax.tqdm.tbatches
+====================
+
+.. currentmodule:: hydrax.tqdm
+
+.. autofunction:: tbatches

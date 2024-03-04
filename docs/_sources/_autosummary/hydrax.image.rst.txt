@@ -1,0 +1,46 @@
+﻿hydrax.image
+============
+
+.. automodule:: hydrax.image
+
+   
+   
+   .. rubric:: Module attributes
+
+   .. autosummary::
+      :toctree:
+   
+      CONVERT_PERCEPTUAL
+      CONVERT_RELATIVE
+      COEFS_FRACTIONAL
+      COEFS_IMAGENET_SRGB
+      COEFS_IMAGENET_SRGB_ALPHA
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+      :nosignatures:
+   
+      make_coefs_balanced
+      make_coefs_balanced_alpha
+      open_sRGB
+      write_CHW
+      write_HWC
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
