@@ -10,6 +10,14 @@ A pip wheel may be coming in the future.
 For now, clone the repository and use the horribly deprecated ``python setup.py install`` in your venv.
 You will need a C compiler for the extension module, as well as the appropriate python C header files.
 
+## Documentation
+
+Read the online documentation for the latest version at
+[https://redhottensors.github.io/hydrax/](https://redhottensors.github.io/hydrax/_autosummary/hydrax.html).
+
+For local HTML documentation, run ``make html`` in ``/sphinx`` and browse the generated Sphinx documentation in
+``_build/html/index.html``. You will need ``pip install furo``, which should also install Sphinx.
+
 ## Usage
 
 ```python
@@ -48,9 +56,8 @@ if __name__ == "main":
 # with hydrax.tqdm.tbatches
     from hydrax.tdqm import tbatches
 
-    with dataloader:
-        for batch in tbatches(dataloader, report_interval=1000):
-            ...
+    for batch in tbatches(dataloader, report_interval=1000): # tbatches includes a with block for the dataloader
+        ...
 ```
 
 ### Batch Structure
@@ -58,8 +65,12 @@ if __name__ == "main":
 In Hydrax, a single Dataloader is usually responsible for producing both your training and validation batches,
 in order to conserve resources and ensure perfectly smooth loading throughout.
 
-Each batch produced by the ``Dataloader`` is either a ``TrainingBatch`` instance or a ``ValidationBatch`` instance,
-which both inherit the common functionality of ``Batch``.
+Each batch produced by the [Dataloader](https://redhottensors.github.io/hydrax/_autosummary/hydrax.Dataloader.html) is
+either a [TrainingBatch](https://redhottensors.github.io/hydrax/_autosummary/hydrax.TrainingBatch.html) instance or a
+[ValidationBatch](https://redhottensors.github.io/hydrax/_autosummary/hydrax.ValidationBatch.html) instance, which both
+inherit the common functionality of [Batch](https://redhottensors.github.io/hydrax/_autosummary/hydrax.Batch.html).
+(You can click any of the preceeding links to view the
+[online documentation](https://redhottensors.github.io/hydrax/_autosummary/hydrax.html).)
 
 The most important properties of a ``Batch`` are:
 * ``arrays`` -- ``{ 'array_name': jax.Array, ... }``, corresponding to each array defined by the source ``DataGroup``.
@@ -70,9 +81,10 @@ The most important properties of a ``Batch`` are:
 
 ### Loader Processes
 
-Read the documentation for your ``loader_func`` carefully. If you receive a warning from Hydrax about
-your loader, you should fix your code. Failure to do this could result in your batch data changing out
-from underneath you, leading to significant training issues such as NaNs.
+Read the [documentation](https://redhottensors.github.io/hydrax/_autosummary/hydrax.Dataloader.html) for
+``loader_func`` carefully. If you receive a warning from Hydrax about your loader, you should fix your code. Failure to
+do this could result in your batch data changing out from underneath you, leading to significant training issues such
+as NaNs.
 
 Do not attempt to construct a Dataloader inside a loader process. Ensure your training code is guarded
 with ``if __name__ == '__main__':``, or is otherwise prevented from running. As a last resort, you can
@@ -92,10 +104,6 @@ to save a checkpoint in response.
 If you send a third ``KeyboardInterrupt``, the Python interpreter is immediately stopped and control is
 returned to you. You will lose all progress since the last checkpoint.
 
-## Documentation
-
-For HTML documentation, run ``make html`` in ``/docs`` and browse the Sphinx documentation at
-``/docs/_build/html/index.html``. You will need ``pip install furo``, which should also install Sphinx.
 
 ## License
 
