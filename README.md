@@ -14,7 +14,7 @@ If you want to use any of the extra modules,
 [hydrax.pandas](https://redhottensors.github.io/hydrax/_autosummary/hydrax.pandas.html),
 you can use ``pip install hydrax[image,tqdm,pandas]`` (or ``pip install hydrax[all]``).
 
-Wheels are currently available for Linux x86_64 with CPython 3.10, 3.11, and 3.12
+Wheels are currently available for Linux x86_64 with CPython 3.10, 3.11, and 3.12.
 
 Ensure you have JAX installed and working. If you install via pip, the latest version of JAX will be installed if it is
 not already, but jaxlib will not be.
