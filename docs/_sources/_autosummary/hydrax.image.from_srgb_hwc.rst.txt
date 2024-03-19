@@ -1,0 +1,6 @@
+hydrax.image.from\_srgb\_hwc
+============================
+
+.. currentmodule:: hydrax.image
+
+.. autofunction:: from_srgb_hwc

@@ -1,6 +1,6 @@
-hydrax.image.open\_sRGB
+hydrax.image.write\_hwc
 =======================
 
 .. currentmodule:: hydrax.image
 
-.. autofunction:: open_sRGB
+.. autofunction:: write_hwc

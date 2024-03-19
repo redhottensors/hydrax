@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.Dataloader" href="hydrax.Dataloader.html" /><link rel="prev" title="hydrax.Batch" href="hydrax.Batch.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>hydrax.DataGroup - Hydrax 0.9 documentation</title>
+        <title>hydrax.DataGroup - Hydrax 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Hydrax 0.9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Hydrax 0.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Hydrax 0.9 documentation</span>
+  <span class="sidebar-brand-text">Hydrax 0.2.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -156,24 +156,23 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="hydrax.html">hydrax</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of hydrax</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.DataGroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.image.html">hydrax.image</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of hydrax.image</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html">hydrax.image.CONVERT_PERCEPTUAL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html">hydrax.image.CONVERT_RELATIVE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_FRACTIONAL.html">hydrax.image.COEFS_FRACTIONAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB.html">hydrax.image.COEFS_IMAGENET_SRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB_ALPHA.html">hydrax.image.COEFS_IMAGENET_SRGB_ALPHA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced.html">hydrax.image.make_coefs_balanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced_alpha.html">hydrax.image.make_coefs_balanced_alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_sRGB.html">hydrax.image.open_sRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_CHW.html">hydrax.image.write_CHW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_HWC.html">hydrax.image.write_HWC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.Coefs.html">hydrax.image.Coefs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_chw.html">hydrax.image.convert_balanced_to_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_hwc.html">hydrax.image.convert_balanced_to_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_chw.html">hydrax.image.convert_frac_to_balanced_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_hwc.html">hydrax.image.convert_frac_to_balanced_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_chw.html">hydrax.image.convert_oklab_to_srgb_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_hwc.html">hydrax.image.convert_oklab_to_srgb_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_chw.html">hydrax.image.convert_srgb_to_oklab_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_hwc.html">hydrax.image.convert_srgb_to_oklab_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.from_srgb_hwc.html">hydrax.image.from_srgb_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_srgb.html">hydrax.image.open_srgb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.set_max_image_pixels.html">hydrax.image.set_max_image_pixels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_chw.html">hydrax.image.write_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_hwc.html">hydrax.image.write_hwc</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.pandas.html">hydrax.pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of hydrax.pandas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -181,10 +180,18 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.tqdm.html">hydrax.tqdm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of hydrax.tqdm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.ProgressMonitor.html">hydrax.tqdm.ProgressMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.DataGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.debug_batch_references.html">hydrax.debug_batch_references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 </ul>
 </li>
 </ul>
@@ -225,8 +232,8 @@
 <h1>hydrax.DataGroup<a class="headerlink" href="#hydrax-datagroup" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="hydrax.DataGroup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">DataGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.DataGroup" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">D</span></code>]</p>
+<em class="property"><span class="pre">final</span><span class="w"> </span><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">DataGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader_arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_SupportsDType</span><span class="p"><span class="pre">[</span></span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">SupportsIndex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">SupportsIndex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_DTypeDict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsDType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_SupportsDType</span><span class="p"><span class="pre">[</span></span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">SupportsIndex</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">SupportsIndex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">_DTypeDict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dtype</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">SupportsDType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_readonly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_later</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.DataGroup" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">D</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">D</span></code>]</p>
 <p>Represents a group of data which share the same descriptor, batch size, and array shapes.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -236,64 +243,51 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>batch_size</strong> – The batch size for loading and processing the data.</p></li>
-<li><p><strong>arrays</strong> – Shape and datatype definitions for all arrays in a batch. Do not include the leading batch
-dimension, since that is specified by <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>. These arrays will be presented to the loader for
+<li><p><strong>data</strong> – A list of all data descriptors for this group. Descriptors are passed to the loader to identify the
+data item to load. Any finite sequence-like object or iterator is acceptable. The elements must pickleable, as
+they are sent directly to loader processes.</p></li>
+<li><p><strong>loader_arrays</strong> – Shape and datatype definitions for all arrays in a loader batch. Do not include the leading
+batch dimension, since that is specified by <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>. These arrays will be presented to the loader for
 zero-copy initialization.</p></li>
-<li><p><strong>data</strong> – A list of all data descriptors for this group. Descriptors are passed to the loader to identify
-the data item to load. Any finite sequence-like object or iterator is acceptable. The elements must
-pickleable, as they are sent directly to loader processes.</p></li>
+<li><p><strong>cache_arrays</strong> – Shape and datatype definitions for all arrays in a cached batch. Do not include the leading
+batch dimension, since that is specified by <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>. Arrays of this shape will be retrieved from and
+stored to disk. If not specified, <code class="docutils literal notranslate"><span class="pre">loader_arrays</span></code>  and data is automatically cached. Otherwise, the data to
+cache must be provided via <a class="reference internal" href="hydrax.Batch.html#hydrax.Batch.cache" title="hydrax.Batch.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">Batch.cache()</span></code></a>.</p></li>
+<li><p><strong>cache_location</strong> – The location of the cache on-disk. If the path does not exist, it is created unless
+<code class="docutils literal notranslate"><span class="pre">cache_readonly</span></code> is specified.</p></li>
+<li><p><strong>cache_readonly</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the cache is readonly and will not be created if it does not exist, nor will it
+be populated if batches are missing. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code> to allow creation and population.</p></li>
+<li><p><strong>seed</strong> – Integer seed to use for shuffling and batch seeding. The default is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>shuffle_first</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the first epoch is shuffled itemwise. Otherwise, the first epoch proceeds in the
+order specified in the dataset, which is the default.</p></li>
+<li><p><strong>shuffle_later</strong> – <p>A string indicating the shuffling and seeding mode for epochs after the first. The default is
+<code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>, see below.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;repeat&quot;</span></code> - do not shuffle or reseed batches</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;reseed&quot;</span></code> - reseed batches but do not shuffle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;itemwise&quot;</span></code> - reseed batches and shuffle items between them</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;batchwise&quot;</span></code> - shuffle the order of batches, but do not reseed or change their contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> - <code class="docutils literal notranslate"><span class="pre">&quot;batchwise&quot;</span></code> if <code class="docutils literal notranslate"><span class="pre">cache_location</span></code> is specified, otherwise <code class="docutils literal notranslate"><span class="pre">&quot;itemwise&quot;</span></code></p></li>
+</ul>
+</p></li>
 </ul>
 </dd>
 </dl>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you want to split a dataset into traning and validation batches, use <a class="reference internal" href="#hydrax.DataGroup.split" title="hydrax.DataGroup.split"><code class="xref py py-func docutils literal notranslate"><span class="pre">split()</span></code></a>.</p>
-<p>If you want to repeat a DataGroup multiple times per epoch, use <a class="reference internal" href="#hydrax.DataGroup.clone" title="hydrax.DataGroup.clone"><code class="xref py py-func docutils literal notranslate"><span class="pre">clone()</span></code></a>. This avoids creating
-multiple copies of your dataset and allows the data to be shuffled independently.</p>
-</div>
+<p>If you do not specify <code class="docutils literal notranslate"><span class="pre">loader_arrays</span></code>, any batches which cannot be loaded from the cache will be dropped. As such,
+both <code class="docutils literal notranslate"><span class="pre">cached_arrays</span></code> and <code class="docutils literal notranslate"><span class="pre">cache_location</span></code> are required, and <code class="docutils literal notranslate"><span class="pre">cache_readonly</span></code> is implied.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If your dataset is an iterable and not otherwise indexable, it will be materialized by the DataGroup.
-If you have hundreds of thousands of items, consider using the <a class="reference internal" href="hydrax.pandas.html#module-hydrax.pandas" title="hydrax.pandas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hydrax.pandas</span></code></a> adapter module.</p>
-</div>
-<p class="rubric">Methods</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.DataGroup.clone" title="hydrax.DataGroup.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone</span></code></a></p></td>
-<td><p>Creates an identical copy of the DataGroup, referencing the same data.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.DataGroup.split" title="hydrax.DataGroup.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a></p></td>
-<td><p>Splits a DataGroup into two parts, optionally with different batch sizes.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Attributes</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.DataGroup.arrays" title="hydrax.DataGroup.arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arrays</span></code></a></p></td>
-<td><p>The shape and dtype definitions for all arrays provided to the loader.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.DataGroup.batch_size" title="hydrax.DataGroup.batch_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_size</span></code></a></p></td>
-<td><p>The batch size configured for the DataGroup.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.DataGroup.batches" title="hydrax.DataGroup.batches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batches</span></code></a></p></td>
-<td><p>The total number of batches this DataGroup can produce per epoch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.DataGroup.memory_size" title="hydrax.DataGroup.memory_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_size</span></code></a></p></td>
-<td><p>The allocation size, in bytes, of a single batch.</p></td>
-</tr>
-</tbody>
-</table>
+<p>If your dataset is an iterable and not otherwise indexable, it will be materialized by the DataGroup. If you
+have hundreds of thousands of items, consider using the <a class="reference internal" href="hydrax.pandas.html#module-hydrax.pandas" title="hydrax.pandas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hydrax.pandas</span></code></a> adapter module.</p>
+<p>A cache cannot be reused if the <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">cache_arrays</span></code>, <code class="docutils literal notranslate"><span class="pre">seed</span></code>, or shuffling parameters
+have changed.  Only the length of the <code class="docutils literal notranslate"><span class="pre">data</span></code> is verified, not its ordering or contents. If either of those
+change, the result of using the cache is undefined. You may change the name and shape of the cache arrays as
+long as their position, NumPy dtype, and total size remain the same.</p>
 </div>
 <dl class="py property">
-<dt class="sig sig-object py" id="hydrax.DataGroup.arrays">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arrays</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.DataGroup.arrays" title="Link to this definition">#</a></dt>
-<dd><p>The shape and dtype definitions for all arrays provided to the loader. Includes the leading batch
-dimension.</p>
-<p>The mapping has the form: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'array_name':</span> <span class="pre">((batch_size,</span> <span class="pre">dim_1,</span> <span class="pre">...),</span> <span class="pre">dtype,</span> <span class="pre">offset,</span> <span class="pre">count),</span> <span class="pre">...</span> <span class="pre">}</span></code></p>
+<dt class="sig sig-object py" id="hydrax.DataGroup.batch_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">batch_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hydrax.DataGroup.batch_count" title="Link to this definition">#</a></dt>
+<dd><p>The total number of batches this DataGroup can produce per epoch.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -303,50 +297,44 @@ dimension.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="hydrax.DataGroup.batches">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">batches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hydrax.DataGroup.batches" title="Link to this definition">#</a></dt>
-<dd><p>The total number of batches this DataGroup can produce per epoch.</p>
-<p>A partial batch cannot be produced, so this is <code class="docutils literal notranslate"><span class="pre">len(group)</span> <span class="pre">//</span> <span class="pre">group.batch_size</span></code>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="hydrax.DataGroup.clone">
-<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rebatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hydrax.DataGroup.clone" title="Link to this definition">#</a></dt>
-<dd><p>Creates an identical copy of the DataGroup, referencing the same data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>rebatch</strong> – The new batch size for the clone. If not specified, the current batch size is retained.</p>
-</dd>
-</dl>
-<p>This function is useful to repeat a given group of data multiple times within each epoch. You must arrange
-the clones according to your interleaving preferences and pass them to <code class="xref py py-func docutils literal notranslate"><span class="pre">Dataloader._init_()</span></code>.</p>
+<dt class="sig sig-object py" id="hydrax.DataGroup.cache_layouts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache_layouts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#hydrax.DataGroup.cache_layouts" title="Link to this definition">#</a></dt>
+<dd><p>The array layouts for all arrays in the cache. Includes the leading batch dimension.</p>
+<p>The mapping has the form:
+<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'array_name':</span> <span class="pre">((batch_size,</span> <span class="pre">dim_1,</span> <span class="pre">...),</span> <span class="pre">numpy_dtype,</span> <span class="pre">jax_dtype,</span> <span class="pre">offset,</span> <span class="pre">count),</span> <span class="pre">...</span> <span class="pre">}</span></code></p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="hydrax.DataGroup.memory_size">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memory_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hydrax.DataGroup.memory_size" title="Link to this definition">#</a></dt>
-<dd><p>The allocation size, in bytes, of a single batch.</p>
+<dt class="sig sig-object py" id="hydrax.DataGroup.cache_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#hydrax.DataGroup.cache_size" title="Link to this definition">#</a></dt>
+<dd><p>The size, in bytes, of a single cached batch, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">cached_arrays</span></code> was not specified.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="hydrax.DataGroup.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebatch_first</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebatch_second</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hydrax.DataGroup.split" title="Link to this definition">#</a></dt>
-<dd><p>Splits a DataGroup into two parts, optionally with different batch sizes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>at</strong> – Index to split the data at, see above.</p></li>
-<li><p><strong>rebatch_first</strong> – New batch size for the first group. If not specified, the current batch size is retained.</p></li>
-<li><p><strong>rebatch_second</strong> – New batch size for the second group. If not specified, the current batch size is
-retained.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A tuple consisting of the first group and the second group.</p>
-</dd>
-</dl>
-<p>The first part contains <code class="docutils literal notranslate"><span class="pre">at</span></code> elements (maximum index <code class="docutils literal notranslate"><span class="pre">at</span> <span class="pre">-</span> <span class="pre">1</span></code>), and the second part contains the rest.</p>
-<p>This function is useful to split a dataset into training and validation sets.</p>
+<dt class="sig sig-object py" id="hydrax.DataGroup.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">value</span></span></span><a class="headerlink" href="#hydrax.DataGroup.count" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hydrax.DataGroup.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">first</span> <span class="pre">index</span> <span class="pre">of</span> <span class="pre">value.</span></span></span><a class="headerlink" href="#hydrax.DataGroup.index" title="Link to this definition">#</a></dt>
+<dd><p>Raises ValueError if the value is not present.</p>
+<p>Supporting start and stop arguments is optional, but
+recommended.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hydrax.DataGroup.loader_layouts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loader_layouts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#hydrax.DataGroup.loader_layouts" title="Link to this definition">#</a></dt>
+<dd><p>The array layouts for all arrays provided to the loader. Includes the leading batch dimension.</p>
+<p>The mapping has the form:
+<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'array_name':</span> <span class="pre">((batch_size,</span> <span class="pre">dim_1,</span> <span class="pre">...),</span> <span class="pre">numpy_dtype,</span> <span class="pre">jax_dtype,</span> <span class="pre">offset,</span> <span class="pre">count),</span> <span class="pre">...</span> <span class="pre">}</span></code></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hydrax.DataGroup.loader_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loader_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#hydrax.DataGroup.loader_size" title="Link to this definition">#</a></dt>
+<dd><p>The size, in bytes, of a single loaded batch, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">loader_arrays</span></code> was not specified.</p>
 </dd></dl>
 
 </dd></dl>
@@ -410,12 +398,14 @@ retained.</p></li>
             <ul>
 <li><a class="reference internal" href="#">hydrax.DataGroup</a><ul>
 <li><a class="reference internal" href="#hydrax.DataGroup"><code class="docutils literal notranslate"><span class="pre">DataGroup</span></code></a><ul>
-<li><a class="reference internal" href="#hydrax.DataGroup.arrays"><code class="docutils literal notranslate"><span class="pre">DataGroup.arrays</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.batch_count"><code class="docutils literal notranslate"><span class="pre">DataGroup.batch_count</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.DataGroup.batch_size"><code class="docutils literal notranslate"><span class="pre">DataGroup.batch_size</span></code></a></li>
-<li><a class="reference internal" href="#hydrax.DataGroup.batches"><code class="docutils literal notranslate"><span class="pre">DataGroup.batches</span></code></a></li>
-<li><a class="reference internal" href="#hydrax.DataGroup.clone"><code class="docutils literal notranslate"><span class="pre">DataGroup.clone()</span></code></a></li>
-<li><a class="reference internal" href="#hydrax.DataGroup.memory_size"><code class="docutils literal notranslate"><span class="pre">DataGroup.memory_size</span></code></a></li>
-<li><a class="reference internal" href="#hydrax.DataGroup.split"><code class="docutils literal notranslate"><span class="pre">DataGroup.split()</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.cache_layouts"><code class="docutils literal notranslate"><span class="pre">DataGroup.cache_layouts</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.cache_size"><code class="docutils literal notranslate"><span class="pre">DataGroup.cache_size</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.count"><code class="docutils literal notranslate"><span class="pre">DataGroup.count()</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.index"><code class="docutils literal notranslate"><span class="pre">DataGroup.index()</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.loader_layouts"><code class="docutils literal notranslate"><span class="pre">DataGroup.loader_layouts</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.DataGroup.loader_size"><code class="docutils literal notranslate"><span class="pre">DataGroup.loader_size</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -429,7 +419,7 @@ retained.</p></li>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=049aceee"></script>
+</div><script src="../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

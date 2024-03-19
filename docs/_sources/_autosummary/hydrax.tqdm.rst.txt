@@ -2,6 +2,9 @@ hydrax.tqdm
 ===========
 
 .. automodule:: hydrax.tqdm
+    
+    
+    
 
    
    
@@ -9,20 +12,6 @@ hydrax.tqdm
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:
-      :nosignatures:
-   
-      tbatches
-   
-   
-
-   
-   
-   .. rubric:: Classes
-
    .. autosummary::
       :toctree:
       :template: custom-class-template.rst
@@ -34,7 +23,14 @@ hydrax.tqdm
 
    
    
+   .. autosummary::
+      :toctree:
+      :nosignatures:
+   
+      tbatches
+   
    
 
-
-
+   
+   
+   

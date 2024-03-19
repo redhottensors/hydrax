@@ -33,15 +33,12 @@ static PyObject *TrackedBuffer_new(PyTypeObject *subtype, PyObject *args, PyObje
 
 static int TrackedBuffer_traverse(PyObject *obj, visitproc visit, void *arg) {
     TrackedBuffer *self = (TrackedBuffer *)obj;
-
     Py_VISIT(self->buffer);
     return 0;
 }
 
 static int TrackedBuffer_clear(PyObject *obj) {
-    TrackedBuffer *self = (TrackedBuffer *)obj;
-
-    Py_CLEAR(self->buffer);
+    // We can't clear self->buffer here, as there may still be a reference to it through us.
     return 0;
 }
 
@@ -108,17 +105,29 @@ static PyObject *TrackedBuffer_repr(PyObject *obj) {
     TrackedBuffer *self = (TrackedBuffer *)obj;
 
     if (!self->buffer) {
-        return PyUnicode_FromFormat("<TrackedBuffer: None>");
+        return PyUnicode_FromFormat(
+            "<%s object at %p buffer=None>",
+            Py_TYPE(self)->tp_name, self
+        );
     }
 
     // Get the repr of the buffer
     PyObject *repr = PyObject_Repr(self->buffer);
     if (!repr) {
         PyErr_Clear();
-        return PyUnicode_FromFormat("<TrackedBuffer: %s>", Py_TYPE(self->buffer)->tp_name);
+
+        return PyUnicode_FromFormat(
+            "<%s object at %p buffer=<%s object at %p>>",
+            Py_TYPE(self)->tp_name, self,
+            Py_TYPE(self->buffer)->tp_name, self->buffer
+        );
     }
 
-    PyObject* result = PyUnicode_FromFormat("<TrackedBuffer: %U>", repr);
+    PyObject* result = PyUnicode_FromFormat(
+        "<%s object at %p buffer=%U>",
+        Py_TYPE(self)->tp_name, self,
+        repr
+    );
     Py_DECREF(repr);
 
     return result;
@@ -144,6 +153,10 @@ static PyMemberDef TrackedBuffer_members[] = {
     {}
 };
 
+#ifndef Py_TPFLAGS_IMMUTABLETYPE
+#define Py_TPFLAGS_IMMUTABLETYPE 0
+#endif
+
 static PyTypeObject TrackedBuffer_type = {
     PyVarObject_HEAD_INIT(&PyType_Type, 0)
     .tp_name = "hydrax._trackedbuffer.TrackedBuffer",
@@ -154,7 +167,7 @@ static PyTypeObject TrackedBuffer_type = {
     .tp_getattro = PyObject_GenericGetAttr,
     .tp_setattro = PyObject_GenericSetAttr,
     .tp_as_buffer = &TrackedBuffer_bufferprocs,
-    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC,
+    .tp_flags = Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE | Py_TPFLAGS_HAVE_GC | Py_TPFLAGS_IMMUTABLETYPE,
     .tp_doc = PyDoc_STR("Buffer protocol wrapper which provides callbacks when the tracked buffer is referenced or dereferenced."),
     .tp_traverse = TrackedBuffer_traverse,
     .tp_clear = TrackedBuffer_clear,

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.image.write_HWC" href="hydrax.image.write_HWC.html" /><link rel="prev" title="hydrax.image.open_sRGB" href="hydrax.image.open_sRGB.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.image.set_max_image_pixels" href="hydrax.image.set_max_image_pixels.html" /><link rel="prev" title="hydrax.image.from_srgb_hwc" href="hydrax.image.from_srgb_hwc.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>hydrax.image.write_CHW - Hydrax 0.9 documentation</title>
+        <title>hydrax.image.open_srgb - Hydrax 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Hydrax 0.9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Hydrax 0.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Hydrax 0.9 documentation</span>
+  <span class="sidebar-brand-text">Hydrax 0.2.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -156,24 +156,23 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="hydrax.html">hydrax</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of hydrax</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="hydrax.image.html">hydrax.image</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of hydrax.image</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html">hydrax.image.CONVERT_PERCEPTUAL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html">hydrax.image.CONVERT_RELATIVE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_FRACTIONAL.html">hydrax.image.COEFS_FRACTIONAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB.html">hydrax.image.COEFS_IMAGENET_SRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB_ALPHA.html">hydrax.image.COEFS_IMAGENET_SRGB_ALPHA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced.html">hydrax.image.make_coefs_balanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced_alpha.html">hydrax.image.make_coefs_balanced_alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_sRGB.html">hydrax.image.open_sRGB</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">hydrax.image.write_CHW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_HWC.html">hydrax.image.write_HWC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.Coefs.html">hydrax.image.Coefs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_chw.html">hydrax.image.convert_balanced_to_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_hwc.html">hydrax.image.convert_balanced_to_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_chw.html">hydrax.image.convert_frac_to_balanced_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_hwc.html">hydrax.image.convert_frac_to_balanced_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_chw.html">hydrax.image.convert_oklab_to_srgb_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_hwc.html">hydrax.image.convert_oklab_to_srgb_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_chw.html">hydrax.image.convert_srgb_to_oklab_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_hwc.html">hydrax.image.convert_srgb_to_oklab_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.from_srgb_hwc.html">hydrax.image.from_srgb_hwc</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">hydrax.image.open_srgb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.set_max_image_pixels.html">hydrax.image.set_max_image_pixels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_chw.html">hydrax.image.write_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_hwc.html">hydrax.image.write_hwc</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.pandas.html">hydrax.pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of hydrax.pandas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -181,10 +180,18 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.tqdm.html">hydrax.tqdm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of hydrax.tqdm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.ProgressMonitor.html">hydrax.tqdm.ProgressMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.debug_batch_references.html">hydrax.debug_batch_references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 </ul>
 </li>
 </ul>
@@ -221,25 +228,37 @@
           </label>
         </div>
         <article role="main">
-          <section id="hydrax-image-write-chw">
-<h1>hydrax.image.write_CHW<a class="headerlink" href="#hydrax-image-write-chw" title="Link to this heading">#</a></h1>
+          <section id="hydrax-image-open-srgb">
+<h1>hydrax.image.open_srgb<a class="headerlink" href="#hydrax-image-open-srgb" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="hydrax.image.write_CHW">
-<span class="sig-prename descclassname"><span class="pre">hydrax.image.</span></span><span class="sig-name descname"><span class="pre">write_CHW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Image</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hydrax.image.write_CHW" title="Link to this definition">#</a></dt>
-<dd><p>Writes a PIL image or image data array to the specified numpy array with shape (Channels, Height, Width).</p>
+<dt class="sig sig-object py" id="hydrax.image.open_srgb">
+<span class="sig-prename descclassname"><span class="pre">hydrax.image.</span></span><span class="sig-name descname"><span class="pre">open_srgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RGB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Intent</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(Intent.RELATIVE_COLORIMETRIC,</span> <span class="pre">9216)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="headerlink" href="#hydrax.image.open_srgb" title="Link to this definition">#</a></dt>
+<dd><p>Opens an image using PIL and ensures it is in the <a class="reference external" href="https://en.wikipedia.org/wiki/SRGB">sRGB</a> colorspace.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>image</strong> – Image data to write.</p></li>
-<li><p><strong>array</strong> – Destination array.</p></li>
-<li><p><strong>coefs</strong> – Representation conversion coefficients. If not specified, the destination array will have the range
-[0, 255].</p></li>
+<li><p><strong>fp</strong> (<em>path-like object</em><em>, </em><em>file stream</em><em>, or </em><em>buffer</em>) – The image to open.</p></li>
+<li><p><strong>mode</strong> – The pixel format for the image. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;RGB&quot;</span></code>, but could also be <code class="docutils literal notranslate"><span class="pre">&quot;RGBA&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;RGBa&quot;</span></code>.</p></li>
+<li><p><strong>convert</strong> (<a class="reference external" href="https://pillow.readthedocs.io/en/stable/reference/ImageCms.html">PIL.ImageCMS.Intent, PIL.ImageCMS.Flags</a>) – The colorspace conversion intent and flags for converting to sRGB. The default,
+<a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html#hydrax.image.CONVERT_RELATIVE" title="hydrax.image.CONVERT_RELATIVE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">CONVERT_RELATIVE</span></code></a> is usually correct. If the specified intent
+<a class="reference external" href="https://pillow.readthedocs.io/en/stable/reference/ImageCms.html#PIL.ImageCms.isIntentSupported">cannot be used</a>
+with the image’s embedded color profile, the profile’s
+<a class="reference external" href="https://pillow.readthedocs.io/en/stable/reference/ImageCms.html#PIL.ImageCms.getDefaultIntent">default intent</a>
+is used instead.</p></li>
+<li><p><strong>formats</strong> – A list or tuple of formats to attempt to load the file in. See
+<a class="reference external" href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.open">PIL.Image.open</a> for more
+details.</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>CHW or “channels-first” is the usual format for images in PyTorch.</p>
+<p>After opening an image, you can write it to a <a class="reference internal" href="hydrax.Dataloader.html#hydrax.Dataloader" title="hydrax.Dataloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">hydrax.Dataloader</span></code></a> <code class="docutils literal notranslate"><span class="pre">loader_func</span></code> array using
+<a class="reference internal" href="hydrax.image.write_hwc.html#hydrax.image.write_hwc" title="hydrax.image.write_hwc"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_hwc()</span></code></a> or <a class="reference internal" href="hydrax.image.write_chw.html#hydrax.image.write_chw" title="hydrax.image.write_chw"><code class="xref py py-func docutils literal notranslate"><span class="pre">write_chw()</span></code></a>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html#hydrax.image.CONVERT_RELATIVE" title="hydrax.image.CONVERT_RELATIVE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">CONVERT_RELATIVE</span></code></a>, <a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html#hydrax.image.CONVERT_PERCEPTUAL" title="hydrax.image.CONVERT_PERCEPTUAL"><code class="xref py py-attr docutils literal notranslate"><span class="pre">CONVERT_PERCEPTUAL</span></code></a>, <a class="reference internal" href="hydrax.image.set_max_image_pixels.html#hydrax.image.set_max_image_pixels" title="hydrax.image.set_max_image_pixels"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_max_image_pixels()</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -250,23 +269,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="hydrax.image.write_HWC.html">
+          <a class="next-page" href="hydrax.image.set_max_image_pixels.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">hydrax.image.write_HWC</div>
+                <div class="title">hydrax.image.set_max_image_pixels</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="hydrax.image.open_sRGB.html">
+          <a class="prev-page" href="hydrax.image.from_srgb_hwc.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">hydrax.image.open_sRGB</div>
+                <div class="title">hydrax.image.from_srgb_hwc</div>
                 
               </div>
             </a>
@@ -300,8 +319,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">hydrax.image.write_CHW</a><ul>
-<li><a class="reference internal" href="#hydrax.image.write_CHW"><code class="docutils literal notranslate"><span class="pre">write_CHW()</span></code></a></li>
+<li><a class="reference internal" href="#">hydrax.image.open_srgb</a><ul>
+<li><a class="reference internal" href="#hydrax.image.open_srgb"><code class="docutils literal notranslate"><span class="pre">open_srgb()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +332,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=049aceee"></script>
+</div><script src="../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

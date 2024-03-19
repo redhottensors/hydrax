@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.TrainingBatch" href="hydrax.TrainingBatch.html" /><link rel="prev" title="hydrax.DataGroup" href="hydrax.DataGroup.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>hydrax.Dataloader - Hydrax 0.9 documentation</title>
+        <title>hydrax.Dataloader - Hydrax 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Hydrax 0.9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Hydrax 0.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Hydrax 0.9 documentation</span>
+  <span class="sidebar-brand-text">Hydrax 0.2.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -156,24 +156,23 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="hydrax.html">hydrax</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of hydrax</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.Dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.image.html">hydrax.image</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of hydrax.image</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html">hydrax.image.CONVERT_PERCEPTUAL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html">hydrax.image.CONVERT_RELATIVE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_FRACTIONAL.html">hydrax.image.COEFS_FRACTIONAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB.html">hydrax.image.COEFS_IMAGENET_SRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB_ALPHA.html">hydrax.image.COEFS_IMAGENET_SRGB_ALPHA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced.html">hydrax.image.make_coefs_balanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced_alpha.html">hydrax.image.make_coefs_balanced_alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_sRGB.html">hydrax.image.open_sRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_CHW.html">hydrax.image.write_CHW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_HWC.html">hydrax.image.write_HWC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.Coefs.html">hydrax.image.Coefs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_chw.html">hydrax.image.convert_balanced_to_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_hwc.html">hydrax.image.convert_balanced_to_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_chw.html">hydrax.image.convert_frac_to_balanced_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_hwc.html">hydrax.image.convert_frac_to_balanced_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_chw.html">hydrax.image.convert_oklab_to_srgb_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_hwc.html">hydrax.image.convert_oklab_to_srgb_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_chw.html">hydrax.image.convert_srgb_to_oklab_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_hwc.html">hydrax.image.convert_srgb_to_oklab_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.from_srgb_hwc.html">hydrax.image.from_srgb_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_srgb.html">hydrax.image.open_srgb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.set_max_image_pixels.html">hydrax.image.set_max_image_pixels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_chw.html">hydrax.image.write_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_hwc.html">hydrax.image.write_hwc</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.pandas.html">hydrax.pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of hydrax.pandas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -181,10 +180,18 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.tqdm.html">hydrax.tqdm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of hydrax.tqdm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.ProgressMonitor.html">hydrax.tqdm.ProgressMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.Dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.debug_batch_references.html">hydrax.debug_batch_references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 </ul>
 </li>
 </ul>
@@ -225,7 +232,7 @@
 <h1>hydrax.Dataloader<a class="headerlink" href="#hydrax-dataloader" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="hydrax.Dataloader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">Dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interleave_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'later'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_sec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.Dataloader" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">final</span><span class="w"> </span><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">Dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader_nice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cacher_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interleave_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_sec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startup_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">placement_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.Dataloader" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">D</span></code>]</p>
 <p>A zero-copy multiprocess JAX dataloader.</p>
 <div class="admonition caution">
@@ -251,32 +258,41 @@ allow one to propagate, which will eventually result in the corresponding batch 
 DataGroups constitutes an epoch.</p></li>
 <li><p><strong>validation</strong> – An optional tuple specifying a validation mode, interval, and data. The validation mode can
 be either <code class="docutils literal notranslate"><span class="pre">&quot;batch&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;epoch&quot;</span></code>, and the interval is how many batches or epochs between validation runs.</p></li>
-<li><p><strong>loader_depth</strong> – The maximum number of batches that can exist at any point in time. Memory usage is
-proportional to the size of the largest possible batch multiplied by the loader depth. This should be at least
-two (one batch being processed, one batch loading), but should be larger if the dataloader needs to work ahead
-further to amortize loading time outliers. The default is 3, allowing the dataloader to work one batch ahead.</p></li>
+<li><p><strong>depth</strong> – The maximum number of batches that can exist at any point in time. Memory usage is proportional to the
+size of the largest possible batch multiplied by the loader depth. This should be at least two (one batch being
+processed, one batch loading), but should be larger if the dataloader needs to work ahead further to amortize
+loading time outliers. The default is 3, allowing the dataloader to work one batch ahead.</p></li>
 <li><p><strong>loader_count</strong> – The number of loader processes. Each loader process loads a single item at a time. This
 defaults to 1, but should probably be higher. Optimally, it should be tuned to saturate the available
-throughput of your data origin (disk/network) without introducing unnecessary process context switching.</p></li>
+throughput of your data origin (disk/network) without introducing unnecessary process context switching. This
+may be 0 only if all data is exclusively loaded from cache, i.e. no <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a> <code class="docutils literal notranslate"><span class="pre">loader_arrays</span></code> are
+specified.</p></li>
+<li><p><strong>loader_nice</strong> – An optional niceness applied to loader processes. Ignored if unsupported by the underlying
+operating system.</p></li>
+<li><p><strong>cacher_count</strong> – The number of cache writer threads. Each cache writer saves a single cache entry at a time.
+This defaults to 1, but should probably be higher. This may be 0 only if all <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a> caches are
+readonly.</p></li>
 <li><p><strong>start_at</strong> – A tuple specifying how far to skip ahead before loading, for example to resume from a checkpoint.
 The first element is the epoch to skip to, and the second is a number of additional batches to skip. The number
 of batches to skip can exceed the number of batches in an epoch, in which case additional epochs are skipped.
 The default is <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>, indicating to start at the beginning.</p></li>
 <li><p><strong>end_at</strong> – An optional tuple specifying when to stop. The first element is either <code class="docutils literal notranslate"><span class="pre">&quot;batch&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;epoch&quot;</span></code>,
-and the second specifies which zero-indexed batch or epoch to stop before. So <code class="docutils literal notranslate"><span class="pre">(&quot;epoch&quot;,</span> <span class="pre">1)</span></code> stops after one
-whole epoch. This argument specifies an absolute position and is not relative to <code class="docutils literal notranslate"><span class="pre">start_at</span></code>. If this is not
-specified, the dataloader runs until it is interrupted by either <a class="reference internal" href="#hydrax.Dataloader.interrupt" title="hydrax.Dataloader.interrupt"><code class="xref py py-func docutils literal notranslate"><span class="pre">interrupt()</span></code></a> or <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>.</p></li>
+and the second specifies which zero-indexed batch or epoch to stop before. So <code class="docutils literal notranslate"><span class="pre">(&quot;epoch&quot;,</span> <span class="pre">1)</span></code> stops after epoch
+0. This argument specifies an absolute position and is not relative to <code class="docutils literal notranslate"><span class="pre">start_at</span></code>. If this is not specified,
+the dataloader runs until it is interrupted by <a class="reference internal" href="#hydrax.Dataloader.interrupt" title="hydrax.Dataloader.interrupt"><code class="xref py py-func docutils literal notranslate"><span class="pre">interrupt()</span></code></a> or its controlling <code class="docutils literal notranslate"><span class="pre">with</span></code> block is exited.</p></li>
 <li><p><strong>interleave_groups</strong> – If multiple training DataGroups are specified, this controls how batches from the
 different groups are interleaved within an epoch. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, groups are loaded sequentially in the order
 specified. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the default, batches from different groups are interleaved, with the least-utilized
 earliest-index group being selected for each batch.</p></li>
-<li><p><strong>shuffle_groups</strong> – Specifies how to shuffle data between epochs. The default, <code class="docutils literal notranslate"><span class="pre">&quot;later&quot;</span></code>, randomly (but
-deterministically) permutes all epochs except the first. <code class="docutils literal notranslate"><span class="pre">&quot;never&quot;</span></code> runs all groups in-order, and <code class="docutils literal notranslate"><span class="pre">&quot;all&quot;</span></code>
-permutes all epochs including the first.</p></li>
-<li><p><strong>seed</strong> – Specifies a seed used for randomness. This seed is used to deterministically calculate permutations
-for <code class="docutils literal notranslate"><span class="pre">shuffle_groups</span></code> and the augmentation seeds passed to <code class="docutils literal notranslate"><span class="pre">loader_func</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 <li><p><strong>timeout_sec</strong> – Raise <a class="reference internal" href="hydrax.BatchTimeoutError.html#hydrax.BatchTimeoutError" title="hydrax.BatchTimeoutError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BatchTimeoutError</span></code></a> if no batches have completed within the specified timeout.
-The default is <code class="docutils literal notranslate"><span class="pre">60</span></code>, and <code class="docutils literal notranslate"><span class="pre">0</span></code> or less disables.</p></li>
+The default is <code class="docutils literal notranslate"><span class="pre">60</span></code>, and <code class="docutils literal notranslate"><span class="pre">0</span></code> or less disables. A value less than <code class="docutils literal notranslate"><span class="pre">20</span></code> is not recommended.</p></li>
+<li><p><strong>startup_func</strong> – An optional callable which is called by each loader process once at startup immediately before
+loading commences. This callable cannot be a lambda, as it must be loadable from a child process.</p></li>
+<li><p><strong>placement_func</strong> – If specified this function is called with a dictionary of NumPy arrays and is responsible for
+orchestrating the placement of the arrays on JAX devices. In addition to the arrays, it is provided their
+layouts, additional data, and the associated <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>. See
+<a class="reference external" href="https://jax.readthedocs.io/en/latest/faq.html#faq-data-placement">https://jax.readthedocs.io/en/latest/faq.html#faq-data-placement</a> for details on data placement in JAX. The
+default implementation places batches uncommitted on the default JAX device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -296,18 +312,18 @@ in order to conserve resources and ensure perfectly smooth loading throughout.</
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;main&quot;</span><span class="p">:</span>
     <span class="n">my_data</span> <span class="o">=</span> <span class="o">...</span>
     <span class="n">array_defs</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;array_name&quot;</span><span class="p">:</span> <span class="p">((</span><span class="n">dim</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="n">dtype</span><span class="p">),</span>
+        <span class="s2">&quot;array_name&quot;</span><span class="p">:</span> <span class="p">((</span><span class="n">dim</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="n">numpy_dtype</span><span class="p">,</span> <span class="n">jax_dtype</span><span class="p">),</span>
         <span class="o">...</span>
     <span class="p">}</span>
 
-    <span class="n">all_data</span> <span class="o">=</span> <span class="n">DataGroup</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">array_defs</span><span class="p">,</span> <span class="n">my_data</span><span class="p">)</span>
-    <span class="n">valid</span><span class="p">,</span> <span class="n">train</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># or however many validation items to reserve</span>
+    <span class="n">train</span> <span class="o">=</span> <span class="n">DataGroup</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">my_data</span><span class="p">[</span><span class="mi">1000</span><span class="p">:],</span> <span class="n">loader_arrays</span><span class="o">=</span><span class="n">array_defs</span><span class="p">)</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="n">DataGroup</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">my_data</span><span class="p">[:</span><span class="mi">1000</span><span class="p">],</span> <span class="n">loader_arrays</span><span class="o">=</span><span class="n">array_defs</span><span class="p">)</span>
 
     <span class="n">dataloader</span> <span class="o">=</span> <span class="n">Dataloader</span><span class="p">(</span>
         <span class="n">my_loader</span><span class="p">,</span>
         <span class="n">train</span><span class="p">,</span>
-        <span class="n">valid</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">valid</span><span class="p">),</span> <span class="c1"># run validation after every epoch</span>
-        <span class="n">end_at</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>        <span class="c1"># run 5 epochs in total</span>
+        <span class="n">validation</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">valid</span><span class="p">),</span> <span class="c1"># run validation after every epoch</span>
+        <span class="n">end_at</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>             <span class="c1"># run 5 epochs in total</span>
     <span class="p">)</span>
 
     <span class="k">with</span> <span class="n">dataloader</span><span class="p">:</span> <span class="c1"># a with block is required</span>
@@ -317,13 +333,24 @@ in order to conserve resources and ensure perfectly smooth loading throughout.</
                 <span class="n">run_training_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">ValidationBatch</span><span class="p">):</span>
                 <span class="n">run_validation_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+            <span class="k">del</span> <span class="n">batch</span> <span class="c1"># important, release batch before waiting for next one or cleaning up</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Read the documentation for your <code class="docutils literal notranslate"><span class="pre">loader_func</span></code> carefully. If you receive a warning from Hydrax about
-your loader, you should fix your code. Failure to do this could result in your batch data changing out
-from underneath you, leading to significant training issues such as NaNs.</p>
+<p>Read the documentation for your <code class="docutils literal notranslate"><span class="pre">loader_func</span></code> carefully. If you receive a warning from Hydrax about your
+loader, you should fix your code. Failure to do this could result in your batch data changing out from
+underneath you, leading to significant training issues such as NaNs.</p>
+<p>If you’re using Python’s built in <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over batches, it’s important to remember not to
+accidentally retain a reference to a batch while “going around” the loop. Python’s local variables are not
+scoped. See the code example above for a way to address this with <code class="docutils literal notranslate"><span class="pre">del</span></code>.</p>
+<p>If you are experiencing deadlocks as a result of retaining batch or array references between iterations,
+consider using <a class="reference internal" href="hydrax.debug_batch_references.html#hydrax.debug_batch_references" title="hydrax.debug_batch_references"><code class="xref py py-func docutils literal notranslate"><span class="pre">debug_batch_references()</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/gc.html#gc.get_referrers">gc.get_referrers</a> to find out what’s holding on
+to your batches, though do keep in mind that JAX dispatch will retain references while running ahead. You can
+check your work by running the Dataloader with <code class="docutils literal notranslate"><span class="pre">depth</span> <span class="pre">=</span> <span class="pre">1</span></code>, which will immediately deadlock if the first batch
+is not properly released.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -343,41 +370,18 @@ to save a checkpoint in response.</p>
 <p>If you send a third <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>, the Python interpreter is immediately stopped and control is
 returned to you. You will lose all progress since the last checkpoint.</p>
 </div>
-<p class="rubric">Methods</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Dataloader.idle_usec" title="hydrax.Dataloader.idle_usec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">idle_usec</span></code></a></p></td>
-<td><p>Returns the total amount of time, in microseconds, since the last call to <code class="docutils literal notranslate"><span class="pre">idle_usec</span></code>, that the <code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code> has spent waiting for a batch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Dataloader.interrupt" title="hydrax.Dataloader.interrupt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interrupt</span></code></a></p></td>
-<td><p>Interrupts the dataloader, so no further batches are returned by <code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Attributes</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Dataloader.batches_per_epoch" title="hydrax.Dataloader.batches_per_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batches_per_epoch</span></code></a></p></td>
-<td><p>The total number of batches per epoch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Dataloader.batches_per_validation" title="hydrax.Dataloader.batches_per_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batches_per_validation</span></code></a></p></td>
-<td><p>The total number of batches per validation run.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Dataloader.first_batch" title="hydrax.Dataloader.first_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_batch</span></code></a></p></td>
-<td><p>The index of the first batch to load.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Dataloader.interrupted" title="hydrax.Dataloader.interrupted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interrupted</span></code></a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this dataloader has been interrupted, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Dataloader.last_batch" title="hydrax.Dataloader.last_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_batch</span></code></a></p></td>
-<td><p>The index of the batch to end at, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no end point was specified.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="hydrax.Dataloader.__enter__">
+<span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hydrax.Dataloader" title="hydrax.Dataloader"><span class="pre">Dataloader</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hydrax.Dataloader.__enter__" title="Link to this definition">#</a></dt>
+<dd><p>Use via a <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hydrax.Dataloader.__next__">
+<span class="sig-name descname"><span class="pre">__next__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="hydrax.Batch.html#hydrax.Batch" title="hydrax.Batch"><span class="pre">Batch</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hydrax.Dataloader.__next__" title="Link to this definition">#</a></dt>
+<dd><p>Retrieves the next <a class="reference internal" href="hydrax.Batch.html#hydrax.Batch" title="hydrax.Batch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Batch</span></code></a>.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="hydrax.Dataloader.batches_per_epoch">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">batches_per_epoch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hydrax.Dataloader.batches_per_epoch" title="Link to this definition">#</a></dt>
@@ -401,8 +405,8 @@ returned to you. You will lose all progress since the last checkpoint.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="hydrax.Dataloader.idle_usec">
 <span class="sig-name descname"><span class="pre">idle_usec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#hydrax.Dataloader.idle_usec" title="Link to this definition">#</a></dt>
-<dd><p>Returns the total amount of time, in microseconds, since the last call to <code class="docutils literal notranslate"><span class="pre">idle_usec</span></code>, that the
-<code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code> has spent waiting for a batch.</p>
+<dd><p>Returns the total amount of time, in microseconds, since the last call to <code class="docutils literal notranslate"><span class="pre">idle_usec</span></code>, that
+<a class="reference internal" href="#hydrax.Dataloader.__next__" title="hydrax.Dataloader.__next__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code></a> has spent waiting for a batch.</p>
 <p>This represents the amount of time that the dataloader has stalled JAX dispatch. Ideally, this value should
 always be zero. If it is consistently high, you either have too few loaders (<code class="docutils literal notranslate"><span class="pre">loader_count</span></code>) or are
 bottlenecked by a shared resource (disk / network / cpu / swap). If it has spikes, you may need to increase
@@ -413,7 +417,7 @@ bottlenecked by a shared resource (disk / network / cpu / swap). If it has spike
 <dl class="py method">
 <dt class="sig sig-object py" id="hydrax.Dataloader.interrupt">
 <span class="sig-name descname"><span class="pre">interrupt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.Dataloader.interrupt" title="Link to this definition">#</a></dt>
-<dd><p>Interrupts the dataloader, so no further batches are returned by <code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code>.</p>
+<dd><p>Interrupts the dataloader, so no further batches are returned by <a class="reference internal" href="#hydrax.Dataloader.__next__" title="hydrax.Dataloader.__next__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__next__()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -490,6 +494,8 @@ bottlenecked by a shared resource (disk / network / cpu / swap). If it has spike
             <ul>
 <li><a class="reference internal" href="#">hydrax.Dataloader</a><ul>
 <li><a class="reference internal" href="#hydrax.Dataloader"><code class="docutils literal notranslate"><span class="pre">Dataloader</span></code></a><ul>
+<li><a class="reference internal" href="#hydrax.Dataloader.__enter__"><code class="docutils literal notranslate"><span class="pre">Dataloader.__enter__()</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.Dataloader.__next__"><code class="docutils literal notranslate"><span class="pre">Dataloader.__next__()</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Dataloader.batches_per_epoch"><code class="docutils literal notranslate"><span class="pre">Dataloader.batches_per_epoch</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Dataloader.batches_per_validation"><code class="docutils literal notranslate"><span class="pre">Dataloader.batches_per_validation</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Dataloader.first_batch"><code class="docutils literal notranslate"><span class="pre">Dataloader.first_batch</span></code></a></li>
@@ -510,7 +516,7 @@ bottlenecked by a shared resource (disk / network / cpu / swap). If it has spike
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=049aceee"></script>
+</div><script src="../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

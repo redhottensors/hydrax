@@ -1,9 +1,12 @@
 /build
+/dist
+/benv
 /venv
+/tenv
 
+.cache/
 __pycache__/
 *.egg-info/
+
 *.so
 compile_commands.json
-
-*.prof

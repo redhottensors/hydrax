@@ -1,13 +1,18 @@
-"""Provides support for using `Pandas <https://pandas.pydata.org/docs/>`_ DataFrames in a :class:`hydrax.DataGroup`."""
+"""Provides support for using `Pandas <https://pandas.pydata.org/docs/>`_ DataFrames in a :class:`hydrax.DataGroup`.
 
-from pandas import DataFrame, Series # type: ignore[import-untyped]
+.. tip::
+    You can ensure this module has its dependencies by installing hydrax with the "pandas" extra via
+    ``pip install hydrax[pandas,...]``.
+"""
 
 from typing import Sequence
+
+from pandas import DataFrame, Series # type: ignore[import-untyped]
 
 class RowData(Sequence[Series]):
     """Wraps a `Pandas <https://pandas.pydata.org/docs/>`_ ``DataFrame`` as a row-wise sequence of ``Series``."""
 
-    __slots__ = ("_dataframe")
+    __slots__ = ("_dataframe",)
 
     def __init__(self, dataframe: DataFrame):
         self._dataframe = dataframe

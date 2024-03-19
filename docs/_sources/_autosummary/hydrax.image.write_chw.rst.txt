@@ -1,6 +1,6 @@
-hydrax.image.write\_HWC
+hydrax.image.write\_chw
 =======================
 
 .. currentmodule:: hydrax.image
 
-.. autofunction:: write_HWC
+.. autofunction:: write_chw

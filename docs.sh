@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd sphinx
+cd sphinx || exit
+rm -r _build _autosummary
 make html
 
 rm -r ../docs/*

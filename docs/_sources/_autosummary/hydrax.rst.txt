@@ -2,6 +2,18 @@
 ======
 
 .. automodule:: hydrax
+    
+    
+    .. autosummary::
+       :toctree:
+       :template: custom-module-template.rst
+       :recursive:
+    
+       hydrax.image
+       hydrax.pandas
+       hydrax.tqdm
+    
+    
 
    
    
@@ -9,20 +21,6 @@
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:
-      :nosignatures:
-   
-      is_worker
-   
-   
-
-   
-   
-   .. rubric:: Classes
-
    .. autosummary::
       :toctree:
       :template: custom-class-template.rst
@@ -38,23 +36,20 @@
 
    
    
-   .. rubric:: Exceptions
+   .. autosummary::
+      :toctree:
+      :nosignatures:
+   
+      debug_batch_references
+      is_worker
+   
+   
 
+   
+   
    .. autosummary::
       :toctree:
    
       BatchTimeoutError
    
    
-
-
-
-.. autosummary::
-   :toctree:
-   :template: custom-module-template.rst
-   :recursive:
-
-   hydrax.image
-   hydrax.pandas
-   hydrax.tqdm
-

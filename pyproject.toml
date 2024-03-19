@@ -1,0 +1,47 @@
+[project]
+name = "hydrax"
+version = "0.2.0"
+authors = [
+    { name = "RedHotTensors", email = "159090586+redhottensors@users.noreply.github.com" },
+]
+description = "A zero-copy multiprocess dataloader for JAX."
+readme = "README.md"
+license = { "file" = "LICENSE" }
+keywords = [ "JAX", "dataloader" ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: C",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Typing :: Typed",
+]
+
+requires-python = ">=3.10"
+dependencies = ["numpy", "jax"]
+
+[project.optional-dependencies]
+image = ["Pillow"]
+pandas = ["pandas"]
+tqdm = ["tqdm"]
+all = ["Pillow", "pandas", "tqdm"]
+
+[project.urls]
+Homepage = "https://github.com/redhottensors/hydrax"
+Documentation = "https://redhottensors.github.io/hydrax/_autosummary/hydrax.html"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pylint.master]
+disable=[
+    "C0111", "C0301", "C0302",
+    "W0212", "W0703",
+    "R0902", "R0903", "R0904", "R0911", "R0912", "R0913", "R0914", "R0915", "R0916", "R1702", "R1705"
+]

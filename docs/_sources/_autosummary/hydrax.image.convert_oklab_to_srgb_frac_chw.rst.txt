@@ -1,0 +1,6 @@
+hydrax.image.convert\_oklab\_to\_srgb\_frac\_chw
+================================================
+
+.. currentmodule:: hydrax.image
+
+.. autofunction:: convert_oklab_to_srgb_frac_chw

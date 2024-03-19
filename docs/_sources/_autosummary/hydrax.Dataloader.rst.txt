@@ -7,30 +7,4 @@ hydrax.Dataloader
    :members:
    :show-inheritance:
    :inherited-members:
-   :special-members: __call__, __add__, __mul__
-
-   
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-      :nosignatures:
-   
-      ~Dataloader.idle_usec
-      ~Dataloader.interrupt
-   
-   
-
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Dataloader.batches_per_epoch
-      ~Dataloader.batches_per_validation
-      ~Dataloader.first_batch
-      ~Dataloader.interrupted
-      ~Dataloader.last_batch
-   
-   
+   :special-members: __call__, __next__, __enter__

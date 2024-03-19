@@ -1,7 +1,10 @@
-﻿hydrax.pandas
+hydrax.pandas
 =============
 
 .. automodule:: hydrax.pandas
+    
+    
+    
 
    
    
@@ -9,12 +12,6 @@
 
    
    
-   
-
-   
-   
-   .. rubric:: Classes
-
    .. autosummary::
       :toctree:
       :template: custom-class-template.rst
@@ -28,5 +25,6 @@
    
    
 
-
-
+   
+   
+   

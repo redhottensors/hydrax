@@ -7,38 +7,4 @@ hydrax.TrainingBatch
    :members:
    :show-inheritance:
    :inherited-members:
-   :special-members: __call__, __add__, __mul__
-
-   
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-      :nosignatures:
-   
-      ~TrainingBatch.get_additional
-      ~TrainingBatch.get_array
-      ~TrainingBatch.get_data
-   
-   
-
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~TrainingBatch.additional
-      ~TrainingBatch.arrays
-      ~TrainingBatch.batch_num
-      ~TrainingBatch.data
-      ~TrainingBatch.epoch
-      ~TrainingBatch.epoch_batch
-      ~TrainingBatch.group
-      ~TrainingBatch.indices
-      ~TrainingBatch.is_training
-      ~TrainingBatch.is_validation
-      ~TrainingBatch.seed
-      ~TrainingBatch.seeds
-   
-   
+   :special-members: __call__, __next__, __enter__

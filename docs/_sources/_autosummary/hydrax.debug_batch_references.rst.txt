@@ -1,0 +1,6 @@
+hydrax.debug\_batch\_references
+===============================
+
+.. currentmodule:: hydrax
+
+.. autofunction:: debug_batch_references

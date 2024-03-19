@@ -1,6 +1,0 @@
-hydrax.image.COEFS\_FRACTIONAL
-==============================
-
-.. currentmodule:: hydrax.image
-
-.. autodata:: COEFS_FRACTIONAL

@@ -1,0 +1,6 @@
+hydrax.image.set\_max\_image\_pixels
+====================================
+
+.. currentmodule:: hydrax.image
+
+.. autofunction:: set_max_image_pixels

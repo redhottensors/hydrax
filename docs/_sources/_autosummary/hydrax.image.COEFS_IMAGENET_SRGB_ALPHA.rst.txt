@@ -1,6 +1,0 @@
-hydrax.image.COEFS\_IMAGENET\_SRGB\_ALPHA
-=========================================
-
-.. currentmodule:: hydrax.image
-
-.. autodata:: COEFS_IMAGENET_SRGB_ALPHA

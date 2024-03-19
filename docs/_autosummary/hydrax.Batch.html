@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.DataGroup" href="hydrax.DataGroup.html" /><link rel="prev" title="hydrax.is_worker" href="hydrax.is_worker.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.DataGroup" href="hydrax.DataGroup.html" /><link rel="prev" title="hydrax.tqdm.tbatches" href="hydrax.tqdm.tbatches.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>hydrax.Batch - Hydrax 0.9 documentation</title>
+        <title>hydrax.Batch - Hydrax 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Hydrax 0.9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Hydrax 0.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Hydrax 0.9 documentation</span>
+  <span class="sidebar-brand-text">Hydrax 0.2.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -156,24 +156,23 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="hydrax.html">hydrax</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of hydrax</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.Batch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.image.html">hydrax.image</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of hydrax.image</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html">hydrax.image.CONVERT_PERCEPTUAL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html">hydrax.image.CONVERT_RELATIVE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_FRACTIONAL.html">hydrax.image.COEFS_FRACTIONAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB.html">hydrax.image.COEFS_IMAGENET_SRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB_ALPHA.html">hydrax.image.COEFS_IMAGENET_SRGB_ALPHA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced.html">hydrax.image.make_coefs_balanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced_alpha.html">hydrax.image.make_coefs_balanced_alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_sRGB.html">hydrax.image.open_sRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_CHW.html">hydrax.image.write_CHW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_HWC.html">hydrax.image.write_HWC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.Coefs.html">hydrax.image.Coefs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_chw.html">hydrax.image.convert_balanced_to_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_hwc.html">hydrax.image.convert_balanced_to_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_chw.html">hydrax.image.convert_frac_to_balanced_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_hwc.html">hydrax.image.convert_frac_to_balanced_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_chw.html">hydrax.image.convert_oklab_to_srgb_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_hwc.html">hydrax.image.convert_oklab_to_srgb_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_chw.html">hydrax.image.convert_srgb_to_oklab_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_hwc.html">hydrax.image.convert_srgb_to_oklab_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.from_srgb_hwc.html">hydrax.image.from_srgb_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_srgb.html">hydrax.image.open_srgb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.set_max_image_pixels.html">hydrax.image.set_max_image_pixels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_chw.html">hydrax.image.write_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_hwc.html">hydrax.image.write_hwc</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.pandas.html">hydrax.pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of hydrax.pandas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -181,10 +180,18 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.tqdm.html">hydrax.tqdm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of hydrax.tqdm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.ProgressMonitor.html">hydrax.tqdm.ProgressMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">hydrax.Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.debug_batch_references.html">hydrax.debug_batch_references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 </ul>
 </li>
 </ul>
@@ -225,67 +232,40 @@
 <h1>hydrax.Batch<a class="headerlink" href="#hydrax-batch" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="hydrax.Batch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">Batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.Batch" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hydrax.</span></span><span class="sig-name descname"><span class="pre">Batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_GroupState</span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hydrax.Batch" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">D</span></code>]</p>
 <p>An abstract base class representing a batch of data loaded by a <a class="reference internal" href="hydrax.Dataloader.html#hydrax.Dataloader" title="hydrax.Dataloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataloader</span></code></a>.</p>
-<p>Batches are returned by <code class="xref py py-func docutils literal notranslate"><span class="pre">Dataloader.__next__()</span></code>.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, this is a <a class="reference internal" href="hydrax.TrainingBatch.html#hydrax.TrainingBatch" title="hydrax.TrainingBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrainingBatch</span></code></a>. Otherwise, <code class="docutils literal notranslate"><span class="pre">is_validation</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and this
-instance is a <a class="reference internal" href="hydrax.ValidationBatch.html#hydrax.ValidationBatch" title="hydrax.ValidationBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationBatch</span></code></a>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Don’t derive from or instantiate this type, it is created internally.</p>
 </div>
-<p class="rubric">Methods</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.get_additional" title="hydrax.Batch.get_additional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_additional</span></code></a></p></td>
-<td><p>Returns the additional data returned by the loader with the specified name for the specified item.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Batch.get_array" title="hydrax.Batch.get_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_array</span></code></a></p></td>
-<td><p>Returns the specified JAX array for this batch, as defined in the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.get_data" title="hydrax.Batch.get_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data</span></code></a></p></td>
-<td><p>Returns the data descriptor for the specified item in this batch.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="rubric">Attributes</p>
-<div class="table-wrapper autosummary longtable docutils container">
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.additional" title="hydrax.Batch.additional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">additional</span></code></a></p></td>
-<td><p>The additional data returned by the loader for each item of the batch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Batch.arrays" title="hydrax.Batch.arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arrays</span></code></a></p></td>
-<td><p>The JAX arrays for this batch, as defined by the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.data" title="hydrax.Batch.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a></p></td>
-<td><p>The data descriptors of the data in this batch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Batch.group" title="hydrax.Batch.group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group</span></code></a></p></td>
-<td><p>The DataGroup from which this batch was loaded.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.indices" title="hydrax.Batch.indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indices</span></code></a></p></td>
-<td><p>The corresponding indices in <code class="docutils literal notranslate"><span class="pre">group</span></code> of the data in this batch.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#hydrax.Batch.is_training" title="hydrax.Batch.is_training"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_training</span></code></a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this instance is a <a class="reference internal" href="hydrax.TrainingBatch.html#hydrax.TrainingBatch" title="hydrax.TrainingBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrainingBatch</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hydrax.Batch.is_validation" title="hydrax.Batch.is_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_validation</span></code></a></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this instance is a <a class="reference internal" href="hydrax.ValidationBatch.html#hydrax.ValidationBatch" title="hydrax.ValidationBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationBatch</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></td>
-</tr>
-</tbody>
-</table>
+<p>Batches are returned by <a class="reference internal" href="hydrax.Dataloader.html#hydrax.Dataloader.__next__" title="hydrax.Dataloader.__next__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Dataloader.__next__()</span></code></a>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, this is a <a class="reference internal" href="hydrax.TrainingBatch.html#hydrax.TrainingBatch" title="hydrax.TrainingBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrainingBatch</span></code></a>. Otherwise, <code class="docutils literal notranslate"><span class="pre">is_validation</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and this
+instance is a <a class="reference internal" href="hydrax.ValidationBatch.html#hydrax.ValidationBatch" title="hydrax.ValidationBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationBatch</span></code></a>. If you did not opt in to validation on the <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataloader`</span></code>, all your
+batches will be <code class="docutils literal notranslate"><span class="pre">TrainingBatch</span></code>.</p>
+<p>If you are not using <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a> caching, you can ignore the following explanation. All of your Batches will
+be loaded <a class="reference internal" href="#hydrax.Batch.uncached" title="hydrax.Batch.uncached"><code class="xref py py-attr docutils literal notranslate"><span class="pre">uncached</span></code></a> and you cannot call <a class="reference internal" href="#hydrax.Batch.cache" title="hydrax.Batch.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">cache()</span></code></a>.</p>
+<p>If you are using <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a> caching and specified both <code class="docutils literal notranslate"><span class="pre">loader_arrays</span></code> and <code class="docutils literal notranslate"><span class="pre">cache_arrays</span></code> then you will
+receive batches in both the cached and <a class="reference internal" href="#hydrax.Batch.uncached" title="hydrax.Batch.uncached"><code class="xref py py-attr docutils literal notranslate"><span class="pre">uncached</span></code></a> layouts. Even if you do not intend to persist a given Batch,
+you should convert it into the cached form by calling <a class="reference internal" href="#hydrax.Batch.cache" title="hydrax.Batch.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">cache()</span></code></a> after transforming your data from its uncached
+layout, for example by applying a fixed encoder network. In future epochs, your cached data will be loaded directly,
+unless you opted out with <code class="docutils literal notranslate"><span class="pre">cache_readonly</span> <span class="pre">=</span> <span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">persist</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Do not retain references to a Batch or its <a class="reference internal" href="#hydrax.Batch.arrays" title="hydrax.Batch.arrays"><code class="xref py py-attr docutils literal notranslate"><span class="pre">arrays</span></code></a> beyond one model batch loop, and be careful not to do
+so accidentally. In limited cases, such as asynchronous logging, it is okay to retain references while that is
+occurring, but it’s important to ensure all references are released once they are no longer needed. As long as a
+Batch’s arrays are referenced (including by the Batch object itself), it consumes one <a class="reference internal" href="hydrax.Dataloader.html#hydrax.Dataloader" title="hydrax.Dataloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataloader</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">depth</span></code>. If all of the <code class="docutils literal notranslate"><span class="pre">depth</span></code> is consumed in this way the Dataloader will stall (or deadlock, if the
+references are never released).</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="hydrax.Batch.additional">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">additional</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.additional" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">additional</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.additional" title="Link to this definition">#</a></dt>
 <dd><p>The additional data returned by the loader for each item of the batch.</p>
-<p>This data is a readonly mapping of the form <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'key_0':</span> <span class="pre">[value_0,</span> <span class="pre">...],</span> <span class="pre">...</span> <span class="pre">}</span></code>, where the number of values
-for each key is equal to the batch size of the <code class="docutils literal notranslate"><span class="pre">DataGroup</span></code>. A value will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the loader did not
-return additional data with the corresponding key for the corresponding item in this batch.</p>
+<p>This data is a readonly mapping of the form <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">'key_0':</span> <span class="pre">[value_0,</span> <span class="pre">...],</span> <span class="pre">...</span> <span class="pre">}</span></code>, where the number of values for
+each key is equal to the batch size of the <code class="docutils literal notranslate"><span class="pre">DataGroup</span></code>. A value will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the loader did not return
+additional data with the corresponding key for the corresponding item in this batch.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -293,31 +273,57 @@ return additional data with the corresponding key for the corresponding item in 
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arrays</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.arrays" title="Link to this definition">#</a></dt>
 <dd><p>The JAX arrays for this batch, as defined by the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p>
 <p>The leading dimension of each array is the batch size of the <code class="docutils literal notranslate"><span class="pre">DataGroup</span></code>. The shapes and dtypes are as
-specified by <code class="docutils literal notranslate"><span class="pre">batch.group.arrays</span></code>.</p>
+specified by <code class="docutils literal notranslate"><span class="pre">group.loader_layouts</span></code> if the batch is <code class="docutils literal notranslate"><span class="pre">uncached</span></code>, otherwise they are as specified by
+<code class="docutils literal notranslate"><span class="pre">group.cache_layouts</span></code>. The current layout is available as the <a class="reference internal" href="#hydrax.Batch.layouts" title="hydrax.Batch.layouts"><code class="xref py py-attr docutils literal notranslate"><span class="pre">layouts</span></code></a> property.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To convert an uncached batch to a cached batch, use <a class="reference internal" href="#hydrax.Batch.cache" title="hydrax.Batch.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">cache()</span></code></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hydrax.Batch.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrays</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Array</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hydrax.Batch.cache" title="Link to this definition">#</a></dt>
+<dd><p>Converts an uncached batch into a cached batch by providing the arrays and additional data to cache.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This method will raise a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> if the batch is already cached, or if cache layouts were not
+specified in the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arrays</strong> – The JAX arrays to cache. These must exactly correspond to <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup.cache_layouts" title="hydrax.DataGroup.cache_layouts"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataGroup.cache_layouts</span></code></a>.</p></li>
+<li><p><strong>additional</strong> – Optional additional data to cache. The contents must be pickleable and the length of each
+list must be exactly equal to <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup.batch_size" title="hydrax.DataGroup.batch_size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataGroup.batch_size</span></code></a>. If not specified, the batch’s current
+<a class="reference internal" href="#hydrax.Batch.additional" title="hydrax.Batch.additional"><code class="xref py py-attr docutils literal notranslate"><span class="pre">additional</span></code></a> data is retained.</p></li>
+<li><p><strong>persist</strong> – If <code class="docutils literal notranslate"><span class="pre">False</span></code> the batch will not actually be persisted to disk and so will need to be reloaded.
+Additionally, persistence is skipped if <code class="docutils literal notranslate"><span class="pre">cache_readonly</span></code> was specified when creating the
+<a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="hydrax.Batch.data">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.data" title="Link to this definition">#</a></dt>
 <dd><p>The data descriptors of the data in this batch.</p>
+<p>The length of this sequence is equal to the batch size of the <a class="reference internal" href="#hydrax.Batch.group" title="hydrax.Batch.group"><code class="xref py py-attr docutils literal notranslate"><span class="pre">group</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="hydrax.Batch.get_additional">
-<span class="sig-name descname"><span class="pre">get_additional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#hydrax.Batch.get_additional" title="Link to this definition">#</a></dt>
-<dd><p>Returns the additional data returned by the loader with the specified name for the specified item.</p>
-<p>The result will be <code class="docutils literal notranslate"><span class="pre">default</span></code> (<code class="docutils literal notranslate"><span class="pre">None</span></code>, unless otherwise specified) if the loader did not return additional
-data with the corresponding key for the specified item, or if such additional data was itself <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<span class="sig-name descname"><span class="pre">get_additional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#hydrax.Batch.get_additional" title="Link to this definition">#</a></dt>
+<dd><p>Returns the additional data returned by the loader with the specified name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – The key returned by the loader.</p></li>
-<li><p><strong>index</strong> – The index of the data item within this batch.</p></li>
-<li><p><strong>default</strong> – The default value to return if the additional data is not present for the item.</p></li>
+<li><p><strong>index</strong> – The index of the data item within this batch. If this is not specified, a sequence corresponding
+to each item in the batch is returned.</p></li>
+<li><p><strong>default</strong> – The default value to return if the additional data is not present.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The additional data value returned by the loader, or <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -326,32 +332,48 @@ data with the corresponding key for the specified item, or if such additional da
 <dt class="sig sig-object py" id="hydrax.Batch.get_array">
 <span class="sig-name descname"><span class="pre">get_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Array</span></span></span><a class="headerlink" href="#hydrax.Batch.get_array" title="Link to this definition">#</a></dt>
 <dd><p>Returns the specified JAX array for this batch, as defined in the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>.</p>
-<p>The leading dimension of the returned array is the batch size of the <code class="docutils literal notranslate"><span class="pre">DataGroup</span></code>. The shape and dtype are as
-specified by <code class="docutils literal notranslate"><span class="pre">batch.group.arrays[name]</span></code>.</p>
-<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">batch.arrays[name]</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> – The name of the array, as defined in the <cite>DataGroup</cite>.</p>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">arrays[name]</span></code>. See <a class="reference internal" href="#hydrax.Batch.arrays" title="hydrax.Batch.arrays"><code class="xref py py-attr docutils literal notranslate"><span class="pre">arrays</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="hydrax.Batch.get_data">
 <span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">D</span></span></span><a class="headerlink" href="#hydrax.Batch.get_data" title="Link to this definition">#</a></dt>
 <dd><p>Returns the data descriptor for the specified item in this batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> – The name of the array, as defined in the <cite>DataGroup</cite>.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This is equivalent to <code class="docutils literal notranslate"><span class="pre">data[index]</span></code>. See <a class="reference internal" href="#hydrax.Batch.data" title="hydrax.Batch.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="hydrax.Batch.group">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">group</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><span class="pre">DataGroup</span></a><span class="p"><span class="pre">[</span></span><span class="pre">D</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.group" title="Link to this definition">#</a></dt>
-<dd><p>The DataGroup from which this batch was loaded.</p>
+<dd><p>The <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a> from which this batch was loaded.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hydrax.Batch.group_index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">group_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#hydrax.Batch.group_index" title="Link to this definition">#</a></dt>
+<dd><p>The index of this batch within <a class="reference internal" href="#hydrax.Batch.group" title="hydrax.Batch.group"><code class="xref py py-attr docutils literal notranslate"><span class="pre">group</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="hydrax.Batch.indices">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.indices" title="Link to this definition">#</a></dt>
-<dd><p>The corresponding indices in <code class="docutils literal notranslate"><span class="pre">group</span></code> of the data in this batch.</p>
+<dd><p>The corresponding indices in <a class="reference internal" href="#hydrax.Batch.group" title="hydrax.Batch.group"><code class="xref py py-attr docutils literal notranslate"><span class="pre">group</span></code></a> of the data in this batch.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -364,6 +386,24 @@ specified by <code class="docutils literal notranslate"><span class="pre">batch.
 <dt class="sig sig-object py" id="hydrax.Batch.is_validation">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_validation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#hydrax.Batch.is_validation" title="Link to this definition">#</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if this instance is a <a class="reference internal" href="hydrax.ValidationBatch.html#hydrax.ValidationBatch" title="hydrax.ValidationBatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValidationBatch</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hydrax.Batch.layouts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layouts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">mappingproxy</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#hydrax.Batch.layouts" title="Link to this definition">#</a></dt>
+<dd><p>The layouts of <code class="docutils literal notranslate"><span class="pre">arrays</span></code>.</p>
+<p>If this batch is <a class="reference internal" href="#hydrax.Batch.uncached" title="hydrax.Batch.uncached"><code class="xref py py-attr docutils literal notranslate"><span class="pre">uncached</span></code></a>, this is <code class="docutils literal notranslate"><span class="pre">group.loader_layouts</span></code>, otherwise it is <code class="docutils literal notranslate"><span class="pre">group.cache_layouts</span></code>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="hydrax.Batch.uncached">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uncached</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#hydrax.Batch.uncached" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the batch is in the loader format specified by the <a class="reference internal" href="hydrax.DataGroup.html#hydrax.DataGroup" title="hydrax.DataGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGroup</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> if it is in
+the cached format.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To convert an uncached batch to a cached batch, use <a class="reference internal" href="#hydrax.Batch.cache" title="hydrax.Batch.cache"><code class="xref py py-func docutils literal notranslate"><span class="pre">cache()</span></code></a>.</p>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -384,14 +424,14 @@ specified by <code class="docutils literal notranslate"><span class="pre">batch.
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="hydrax.is_worker.html">
+          <a class="prev-page" href="hydrax.tqdm.tbatches.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">hydrax.is_worker</div>
+                <div class="title">hydrax.tqdm.tbatches</div>
                 
               </div>
             </a>
@@ -429,14 +469,18 @@ specified by <code class="docutils literal notranslate"><span class="pre">batch.
 <li><a class="reference internal" href="#hydrax.Batch"><code class="docutils literal notranslate"><span class="pre">Batch</span></code></a><ul>
 <li><a class="reference internal" href="#hydrax.Batch.additional"><code class="docutils literal notranslate"><span class="pre">Batch.additional</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.arrays"><code class="docutils literal notranslate"><span class="pre">Batch.arrays</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.Batch.cache"><code class="docutils literal notranslate"><span class="pre">Batch.cache()</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.data"><code class="docutils literal notranslate"><span class="pre">Batch.data</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.get_additional"><code class="docutils literal notranslate"><span class="pre">Batch.get_additional()</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.get_array"><code class="docutils literal notranslate"><span class="pre">Batch.get_array()</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.get_data"><code class="docutils literal notranslate"><span class="pre">Batch.get_data()</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.group"><code class="docutils literal notranslate"><span class="pre">Batch.group</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.Batch.group_index"><code class="docutils literal notranslate"><span class="pre">Batch.group_index</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.indices"><code class="docutils literal notranslate"><span class="pre">Batch.indices</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.is_training"><code class="docutils literal notranslate"><span class="pre">Batch.is_training</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.Batch.is_validation"><code class="docutils literal notranslate"><span class="pre">Batch.is_validation</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.Batch.layouts"><code class="docutils literal notranslate"><span class="pre">Batch.layouts</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.Batch.uncached"><code class="docutils literal notranslate"><span class="pre">Batch.uncached</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -450,7 +494,7 @@ specified by <code class="docutils literal notranslate"><span class="pre">batch.
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=049aceee"></script>
+</div><script src="../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

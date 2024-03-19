@@ -1,0 +1,10 @@
+hydrax.image.Coefs
+==================
+
+.. currentmodule:: hydrax.image
+
+.. autoclass:: Coefs
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :special-members: __call__, __next__, __enter__

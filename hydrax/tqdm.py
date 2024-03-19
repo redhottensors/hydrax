@@ -1,8 +1,14 @@
-"""Provides `tqdm <https://github.com/tqdm/tqdm>`_ progress bar support."""
+"""Provides `tqdm <https://github.com/tqdm/tqdm>`_ progress bar support.
 
-from tqdm import tqdm
+.. tip::
+    You can ensure this module has its dependencies by installing hydrax with the "tqdm" extra via
+    ``pip install hydrax[tqdm,...]``.
+"""
+
+from typing import Iterable, Generic, TypeVar
+
 from hydrax import Dataloader, Batch, TrainingBatch, ValidationBatch
-from typing import Iterable, Dict, Any, Self, Generic, TypeVar
+from tqdm import tqdm
 
 D = TypeVar('D')
 
@@ -39,7 +45,7 @@ class ProgressMonitor(Generic[D]):
             total=dataloader.last_batch,
             unit="batch",
             desc=description,
-            leave=False,
+            leave=True,
             **kwargs
         )
 
@@ -49,7 +55,8 @@ class ProgressMonitor(Generic[D]):
         self._count = 0
         self._dropped = 0
 
-    def __enter__(self) -> Self:
+    def __enter__(self) -> "ProgressMonitor[D]":
+        """Use via a ``with`` block. Calls :func:`close` on exit."""
         return self
 
     def __exit__(self, exc_type, exc_value, exc_tb) -> None:
@@ -58,7 +65,7 @@ class ProgressMonitor(Generic[D]):
     def begin_batch(self, batch: Batch[D]) -> None:
         """Signal the start of a batch."""
 
-        assert(self._tbar is not None)
+        assert self._tbar is not None
 
         if isinstance(batch, ValidationBatch):
             if self._vbar is None:
@@ -78,23 +85,23 @@ class ProgressMonitor(Generic[D]):
     def end_batch(self, batch: Batch[D]) -> None:
         """Signal the end of a batch."""
 
-        assert(self._tbar is not None)
+        assert self._tbar is not None
 
         if isinstance(batch, TrainingBatch):
-            assert(self._vbar is None)
+            assert self._vbar is None
 
             delta = batch.batch_num - self._prev_tbatch
-            assert(delta > 0)
+            assert delta > 0
 
             self._tbar.update(delta)
             self._dropped += delta - 1
             self._prev_tbatch = batch.batch_num
 
         if isinstance(batch, ValidationBatch):
-            assert(self._vbar is not None)
+            assert self._vbar is not None
 
             delta = batch.validation_epoch_batch - self._prev_vbatch
-            assert(delta > 0)
+            assert delta > 0
 
             self._vbar.update(delta)
             self._dropped += delta - 1
@@ -136,7 +143,7 @@ def tbatches(
     :param dataloader: The :class:`hydrax.Dataloader` to wrap.
     :param report_interval: Interval, in batches, to check for issues and report. 0 by default, which means reporting
         is disabled.
-    :param desc: A description for the progress bar. Defaults to "train".
+    :param description: A description for the progress bar. Defaults to "train".
     :param kwargs: Additional keyword arguments passed to tqdm.
     :return: An iterator over each :class:`hydrax.Batch` produced by the Dataloader.
     """
@@ -144,6 +151,9 @@ def tbatches(
     with ProgressMonitor(dataloader, report_interval, description, **kwargs) as monitor:
         with dataloader:
             for batch in dataloader:
-                monitor.begin_batch(batch)
-                yield batch
-                monitor.end_batch(batch)
+                try:
+                    monitor.begin_batch(batch)
+                    yield batch
+                    monitor.end_batch(batch)
+                finally:
+                    del batch # don't carry batch into the next iteration

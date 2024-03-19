@@ -7,26 +7,4 @@ hydrax.pandas.RowData
    :members:
    :show-inheritance:
    :inherited-members:
-   :special-members: __call__, __add__, __mul__
-
-   
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-      :nosignatures:
-   
-      ~RowData.count
-      ~RowData.index
-   
-   
-
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~RowData.dataframe
-   
-   
+   :special-members: __call__, __next__, __enter__

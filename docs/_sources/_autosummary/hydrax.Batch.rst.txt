@@ -7,33 +7,4 @@ hydrax.Batch
    :members:
    :show-inheritance:
    :inherited-members:
-   :special-members: __call__, __add__, __mul__
-
-   
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-      :nosignatures:
-   
-      ~Batch.get_additional
-      ~Batch.get_array
-      ~Batch.get_data
-   
-   
-
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Batch.additional
-      ~Batch.arrays
-      ~Batch.data
-      ~Batch.group
-      ~Batch.indices
-      ~Batch.is_training
-      ~Batch.is_validation
-   
-   
+   :special-members: __call__, __next__, __enter__

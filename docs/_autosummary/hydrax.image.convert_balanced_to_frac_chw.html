@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.image.open_sRGB" href="hydrax.image.open_sRGB.html" /><link rel="prev" title="hydrax.image.make_coefs_balanced" href="hydrax.image.make_coefs_balanced.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="hydrax.image.convert_balanced_to_frac_hwc" href="hydrax.image.convert_balanced_to_frac_hwc.html" /><link rel="prev" title="hydrax.image.Coefs" href="hydrax.image.Coefs.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>hydrax.image.make_coefs_balanced_alpha - Hydrax 0.9 documentation</title>
+        <title>hydrax.image.convert_balanced_to_frac_chw - Hydrax 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Hydrax 0.9 documentation</div></a>
+      <a href="../index.html"><div class="brand">Hydrax 0.2.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Hydrax 0.9 documentation</span>
+  <span class="sidebar-brand-text">Hydrax 0.2.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -156,24 +156,23 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="hydrax.html">hydrax</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of hydrax</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="hydrax.image.html">hydrax.image</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of hydrax.image</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_PERCEPTUAL.html">hydrax.image.CONVERT_PERCEPTUAL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.image.CONVERT_RELATIVE.html">hydrax.image.CONVERT_RELATIVE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_FRACTIONAL.html">hydrax.image.COEFS_FRACTIONAL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB.html">hydrax.image.COEFS_IMAGENET_SRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.COEFS_IMAGENET_SRGB_ALPHA.html">hydrax.image.COEFS_IMAGENET_SRGB_ALPHA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.make_coefs_balanced.html">hydrax.image.make_coefs_balanced</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">hydrax.image.make_coefs_balanced_alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_sRGB.html">hydrax.image.open_sRGB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_CHW.html">hydrax.image.write_CHW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_HWC.html">hydrax.image.write_HWC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.Coefs.html">hydrax.image.Coefs</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">hydrax.image.convert_balanced_to_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_balanced_to_frac_hwc.html">hydrax.image.convert_balanced_to_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_chw.html">hydrax.image.convert_frac_to_balanced_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_frac_to_balanced_hwc.html">hydrax.image.convert_frac_to_balanced_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_chw.html">hydrax.image.convert_oklab_to_srgb_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_oklab_to_srgb_frac_hwc.html">hydrax.image.convert_oklab_to_srgb_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_chw.html">hydrax.image.convert_srgb_to_oklab_frac_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.convert_srgb_to_oklab_frac_hwc.html">hydrax.image.convert_srgb_to_oklab_frac_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.from_srgb_hwc.html">hydrax.image.from_srgb_hwc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.open_srgb.html">hydrax.image.open_srgb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.set_max_image_pixels.html">hydrax.image.set_max_image_pixels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_chw.html">hydrax.image.write_chw</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.image.write_hwc.html">hydrax.image.write_hwc</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.pandas.html">hydrax.pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of hydrax.pandas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -181,10 +180,18 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hydrax.tqdm.html">hydrax.tqdm</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of hydrax.tqdm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.ProgressMonitor.html">hydrax.tqdm.ProgressMonitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hydrax.tqdm.tbatches.html">hydrax.tqdm.tbatches</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Batch.html">hydrax.Batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.DataGroup.html">hydrax.DataGroup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.Dataloader.html">hydrax.Dataloader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.TrainingBatch.html">hydrax.TrainingBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.ValidationBatch.html">hydrax.ValidationBatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.debug_batch_references.html">hydrax.debug_batch_references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.is_worker.html">hydrax.is_worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hydrax.BatchTimeoutError.html">hydrax.BatchTimeoutError</a></li>
 </ul>
 </li>
 </ul>
@@ -221,13 +228,22 @@
           </label>
         </div>
         <article role="main">
-          <section id="hydrax-image-make-coefs-balanced-alpha">
-<h1>hydrax.image.make_coefs_balanced_alpha<a class="headerlink" href="#hydrax-image-make-coefs-balanced-alpha" title="Link to this heading">#</a></h1>
+          <section id="hydrax-image-convert-balanced-to-frac-chw">
+<h1>hydrax.image.convert_balanced_to_frac_chw<a class="headerlink" href="#hydrax-image-convert-balanced-to-frac-chw" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="hydrax.image.make_coefs_balanced_alpha">
-<span class="sig-prename descclassname"><span class="pre">hydrax.image.</span></span><span class="sig-name descname"><span class="pre">make_coefs_balanced_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#hydrax.image.make_coefs_balanced_alpha" title="Link to this definition">#</a></dt>
-<dd><p>Returns a set of coefficients for converting sRGBA to a balanced floating point representation in the range
-[<code class="docutils literal notranslate"><span class="pre">-scale</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code>], with alpha in the range [0.0, 1.0].</p>
+<dt class="sig sig-object py" id="hydrax.image.convert_balanced_to_frac_chw">
+<span class="sig-prename descclassname"><span class="pre">hydrax.image.</span></span><span class="sig-name descname"><span class="pre">convert_balanced_to_frac_chw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#hydrax.image.convert_balanced_to_frac_chw" title="Link to this definition">#</a></dt>
+<dd><p>Converts an image data array in balanced <code class="docutils literal notranslate"><span class="pre">[-scale,</span> <span class="pre">scale]</span></code> HWC format to a fractional <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code>
+representation in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> – Image data to convert. Any number of leading batch dimensions may be present. The alpha channel, if
+present, is not modified.</p></li>
+<li><p><strong>scale</strong> – Scale of the balanced representation. The default is <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -237,23 +253,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="hydrax.image.open_sRGB.html">
+          <a class="next-page" href="hydrax.image.convert_balanced_to_frac_hwc.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">hydrax.image.open_sRGB</div>
+                <div class="title">hydrax.image.convert_balanced_to_frac_hwc</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="hydrax.image.make_coefs_balanced.html">
+          <a class="prev-page" href="hydrax.image.Coefs.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">hydrax.image.make_coefs_balanced</div>
+                <div class="title">hydrax.image.Coefs</div>
                 
               </div>
             </a>
@@ -287,8 +303,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">hydrax.image.make_coefs_balanced_alpha</a><ul>
-<li><a class="reference internal" href="#hydrax.image.make_coefs_balanced_alpha"><code class="docutils literal notranslate"><span class="pre">make_coefs_balanced_alpha()</span></code></a></li>
+<li><a class="reference internal" href="#">hydrax.image.convert_balanced_to_frac_chw</a><ul>
+<li><a class="reference internal" href="#hydrax.image.convert_balanced_to_frac_chw"><code class="docutils literal notranslate"><span class="pre">convert_balanced_to_frac_chw()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -300,7 +316,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=049aceee"></script>
+</div><script src="../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

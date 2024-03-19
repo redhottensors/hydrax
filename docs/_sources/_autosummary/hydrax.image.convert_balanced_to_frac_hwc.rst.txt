@@ -1,0 +1,6 @@
+hydrax.image.convert\_balanced\_to\_frac\_hwc
+=============================================
+
+.. currentmodule:: hydrax.image
+
+.. autofunction:: convert_balanced_to_frac_hwc

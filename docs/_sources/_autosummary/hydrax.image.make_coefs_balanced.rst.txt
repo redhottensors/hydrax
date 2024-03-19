@@ -1,6 +1,0 @@
-hydrax.image.make\_coefs\_balanced
-==================================
-
-.. currentmodule:: hydrax.image
-
-.. autofunction:: make_coefs_balanced

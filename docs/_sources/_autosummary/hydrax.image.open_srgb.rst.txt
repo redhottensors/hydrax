@@ -1,6 +1,6 @@
-hydrax.image.write\_CHW
+hydrax.image.open\_srgb
 =======================
 
 .. currentmodule:: hydrax.image
 
-.. autofunction:: write_CHW
+.. autofunction:: open_srgb
