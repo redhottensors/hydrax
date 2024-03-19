@@ -1,14 +1,31 @@
 # Hydrax 🐉
-A zero-copy multiprocess dataloader for JAX. Built for [Project RedRocket](https://huggingface.co/RedRocket/).
+A zero-copy multiprocess dataloader for [JAX](https://jax.readthedocs.io/en/latest/).
+Built for [Project RedRocket](https://huggingface.co/RedRocket/).
 
 ## Installation
 
-Ensure you have JAX installed. If you are using the ``hydrax.tqdm`` module, ensure [tqdm](https://github.com/tqdm/tqdm)
-is installed as well.
+``pip install hydrax``
 
-A pip wheel may be coming in the future. For now, clone the repository and use the horribly deprecated
-``python setup.py install`` in your venv. You will need a C compiler for the extension module, as well as the
-appropriate python C header files.
+If you want to use any of the extra modules,
+[hydrax.image](https://redhottensors.github.io/hydrax/_autosummary/hydrax.image.html),
+[hydrax.tqdm](https://redhottensors.github.io/hydrax/_autosummary/hydrax.tqdm.html), or
+[hydrax.pandas](https://redhottensors.github.io/hydrax/_autosummary/hydrax.pandas.html),
+you can use ``pip install hydrax[image,tqdm,pandas]`` (or ``pip install hydrax[all]``).
+
+Wheels are currently available for Linux x86_64 with CPython 3.10, 3.11, and 3.12
+
+Ensure you have JAX installed and working. If you install via pip, the latest version of JAX will be installed if it is
+not already, but jaxlib will not be.
+
+### From Source
+
+Clone this repository, install Python development files and a C compiler, and run:
+
+```sh
+source path/to/your/venv/bin/activate
+python -m build --wheel
+pip install 'dist/hydrax-<...>.whl'
+```
 
 ## Documentation
 
@@ -86,9 +103,9 @@ inherit the common functionality of [Batch](https://redhottensors.github.io/hydr
 The most important properties of a ``Batch`` are:
 * ``arrays`` -- ``{ 'array_name': jax.Array, ... }``, corresponding to each array defined by the source ``DataGroup``.
     The first dimension of the array is the batch size.
-* ``additional`` -- ``{ 'key': [item_0_value, ...] }``, corresponding to any additional data
-    returned by your loader function. Each list's ``len`` is the batch size. If no corresponding item was returned, the
-    element is ``None``. Use ``get_additional(key[, index])`` if your loader sometimes omits returning certain keys.
+* ``additional`` -- ``{ 'key': [item_0_value, ...] }``, corresponding to any additional data returned by your loader
+    function. Each list's ``len`` is the batch size. If no corresponding item was returned, the element is ``None``.
+    Use ``get_additional(key[, index])`` if your loader sometimes omits returning certain keys.
 * ``data`` -- A proxy type to the original data descriptors for each item, with length equal to the batch size.
 
 As mentioned above, remember to release any references to a batch or its arrays as soon as you're done with them.
@@ -119,11 +136,17 @@ You will lose all progress since the last checkpoint.
 
 ## Compatibility
 
-Compatibility for [pandas](https://pandas.pydata.org/) datasets is provided by
-[hydrax.pandas](https://redhottensors.github.io/hydrax/_autosummary/hydrax.pandas.RowData.html)
+A convienient wrapper with [tqdm](https://tqdm.github.io/) progress bars is provided in
+[hydrax.tqdm](https://redhottensors.github.io/hydrax/_autosummary/hydrax.tqdm.html). The corresponding extra is
+``tqdm``.
 
 ICC-profile-aware 8bbp image loading with [Pillow](https://python-pillow.org/) is provided in
-[hydrax.image](https://redhottensors.github.io/hydrax/_autosummary/hydrax.image.html)
+[hydrax.image](https://redhottensors.github.io/hydrax/_autosummary/hydrax.image.html), and support is included for
+[Oklab](https://bottosson.github.io/posts/oklab/) as well. The corresponding extra is ``image``.
+
+Compatibility for [Pandas](https://pandas.pydata.org/) datasets is provided by
+[hydrax.pandas](https://redhottensors.github.io/hydrax/_autosummary/hydrax.pandas.RowData.html). The corresponding extra
+is ``pandas``.
 
 ## License
 
