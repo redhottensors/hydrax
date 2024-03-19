@@ -4,7 +4,9 @@ Built for [Project RedRocket](https://huggingface.co/RedRocket/).
 
 ## Installation
 
-``pip install hydrax``
+```sh
+pip install hydrax
+```
 
 If you want to use any of the extra modules,
 [hydrax.image](https://redhottensors.github.io/hydrax/_autosummary/hydrax.image.html),
