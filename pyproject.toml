@@ -1,6 +1,6 @@
 [project]
 name = "hydrax"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
     { name = "RedHotTensors", email = "159090586+redhottensors@users.noreply.github.com" },
 ]
