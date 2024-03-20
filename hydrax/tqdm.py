@@ -13,12 +13,13 @@ from tqdm import tqdm
 D = TypeVar('D')
 
 class ProgressMonitor(Generic[D]):
-    """Wraps a :class:`hydrax.Dataloader` with `tqdm <https://github.com/tqdm/tqdm>`_ progress bars.
+    """Provides `tqdm <https://github.com/tqdm/tqdm>`_ progress bars for a :class:`Dataloader <hydrax.Dataloader>`.
 
     .. tip::
         In most cases, you can use :func:`tbatches` instead, which wraps a dataloader and yields its batches.
 
-    :param dataloader: The :class:`hydrax.Dataloader` to wrap.
+    :param dataloader: The :class:`Dataloader <hydrax.Dataloader>`. It must be
+        :attr:`deterministic <hydrax.Dataloader.deterministic>`.
     :param report_interval: Interval, in batches, to check for issues and report. 0 by default, which means reporting
         is disabled.
     :param description: A description for the progress bar. Defaults to "train".
@@ -36,6 +37,9 @@ class ProgressMonitor(Generic[D]):
         description: str = "train",
         **kwargs
     ):
+        if not dataloader.deterministic:
+            raise ValueError("dataloader is not deterministic")
+
         self._dataloader = dataloader
         self._tqdm_args = kwargs
         self._report = report_interval
@@ -137,15 +141,16 @@ def tbatches(
     description: str = "train",
     **kwargs
 ) -> Iterable[Batch[D]]:
-    """Wraps a :class:`hydrax.Dataloader` with `tqdm <https://github.com/tqdm/tqdm>`_ progress bars, yielding each
-    :class:`hydrax.Batch`.
+    """Wraps a :class:`Dataloader <hydrax.Dataloader>` with `tqdm <https://github.com/tqdm/tqdm>`_ progress bars,
+    yielding each :class:`Batch <hydrax.Batch>`.
 
-    :param dataloader: The :class:`hydrax.Dataloader` to wrap.
+    :param dataloader: The :class:`Dataloader <hydrax.Dataloader>` to wrap. It must be
+        :attr:`deterministic <hydrax.Dataloader.deterministic>`, and not have been started via ``with``.
     :param report_interval: Interval, in batches, to check for issues and report. 0 by default, which means reporting
         is disabled.
     :param description: A description for the progress bar. Defaults to "train".
     :param kwargs: Additional keyword arguments passed to tqdm.
-    :return: An iterator over each :class:`hydrax.Batch` produced by the Dataloader.
+    :return: An iterator over each :class:`Batch <hydrax.Batch>` produced by the Dataloader.
     """
 
     with ProgressMonitor(dataloader, report_interval, description, **kwargs) as monitor:

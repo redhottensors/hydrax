@@ -1214,19 +1214,27 @@ class _LoaderChain(Generic[D]):
         self._check_chain()
 
     def batch_ready(self) -> None:
-        self._batch_ready = True
-        self._check_chain()
+        if self.dataloader._deterministic:
+            self._batch_ready = True
+            self._check_chain()
+        else:
+            self.dataloader._batches.put(self.batch)
+            self.batch = None
 
     def batch_failed(self) -> None:
         self.batch = None
-        self._batch_ready = True
-        self._check_chain()
+
+        if self.dataloader._deterministic:
+            self._batch_ready = True
+            self._check_chain()
 
     def chain_to(self, chained: "_LoaderChain[D]") -> None:
         self._chained = chained
         self._check_chain()
 
     def _check_chain(self) -> None:
+        assert self.dataloader._deterministic
+
         if not self._prior_ready or not self._batch_ready:
             return
 
@@ -1361,6 +1369,8 @@ class Dataloader(Generic[D]):
         different groups are interleaved within an epoch. If ``False``, groups are loaded sequentially in the order
         specified. If ``True``, the default, batches from different groups are interleaved, with the least-utilized
         earliest-index group being selected for each batch.
+    :param deterministic: If ``False``, batches are permitted to be processed out-of-order in the event that a later
+        batch is ready prior to a preceding batch. This option is not compatible with ``hydrax.tqdm``.
     :param timeout_sec: Raise :class:`BatchTimeoutError` if no batches have completed within the specified timeout.
         The default is ``60``, and ``0`` or less disables. A value less than ``20`` is not recommended.
     :param startup_func: An optional callable which is called by each loader process once at startup immediately before
@@ -1451,7 +1461,7 @@ class Dataloader(Generic[D]):
         "_timeout", "_tgroups", "_buffer_size", "_vmode", "_vinterval", "_vgroups", "_vepoch", "_vbatch",
         "_batches_per_validation", "_interrupt", "_abort", "_failed", "_setup", "_running", "_watchdog_armed",
         "_idle_usec", "_first_batch", "_tgroup", "_mpctx", "_batches", "_semaphore", "_buffers", "_memories",
-        "_submission_id", "_submission_queue", "_completion_queue", "_inflight", "_submission_thread",
+        "_submission_id", "_submission_queue", "_completion_queue", "_inflight", "_deterministic", "_submission_thread",
         "_completion_thread", "_watchdog_thread", "_loaders", "_chain_lock", "_chain_to", "_batches_per_epoch",
         "_sigint", "_placement", "_cacher_count", "_cacher_queue", "_cachers", "_cache_inflight",
         "_cache_inflight_lock", "_cacher_semaphore"
@@ -1470,6 +1480,7 @@ class Dataloader(Generic[D]):
         start_at: tuple[int, int] = (0, 0), # epoch, epoch batch
         end_at: tuple[str, int] | None = None, # ("never" | "epoch" | "batch"), interval
         interleave_groups: bool = True,
+        deterministic: bool = True,
         timeout_sec: int = 60,
         startup_func: StartupFunc | None = None,
         placement_func: PlacementFunc | None = None
@@ -1491,6 +1502,7 @@ class Dataloader(Generic[D]):
         self._loader_nice = loader_nice
         self._end_at = end_at if end_at is not None else ("never", -1)
         self._interleave = interleave_groups
+        self._deterministic = deterministic
         self._timeout = timeout_sec if timeout_sec > 0 else 31536000 # not technically disabled, but this is 1 year.
         self._placement = placement_func if placement_func is not None else _default_placement
 
@@ -1875,6 +1887,11 @@ class Dataloader(Generic[D]):
             case _:
                 return None
 
+    @property
+    def deterministic(self) -> bool:
+        """``True`` if the dataloader is deterministic, and ``False`` otherwise."""
+        return self._deterministic
+
     def idle_usec(self) -> int:
         """Returns the total amount of time, in microseconds, since the last call to ``idle_usec``, that
         :func:`__next__` has spent waiting for a batch.
@@ -2166,12 +2183,13 @@ class Dataloader(Generic[D]):
 
         chain = _LoaderChain(self, batch)
 
-        if self._chain_to is None:
-            chain.prior_ready()
-        else:
-            self._chain_to.chain_to(chain)
+        if self._deterministic:
+            if self._chain_to is None:
+                chain.prior_ready()
+            else:
+                self._chain_to.chain_to(chain)
 
-        self._chain_to = chain
+            self._chain_to = chain
 
         if self._load_from_cache(chain, batch):
             return True
