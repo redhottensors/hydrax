@@ -242,12 +242,32 @@
 </dl>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Many useful predefined coefficients are provided: <code class="xref py py-attr docutils literal notranslate"><span class="pre">FRACTIONAL</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">IMAGENET_SRGB</span></code>,
-<code class="xref py py-attr docutils literal notranslate"><span class="pre">IMAGENET_SRGB_ALPHA</span></code>, <a class="reference internal" href="#hydrax.image.Coefs.balanced" title="hydrax.image.Coefs.balanced"><code class="xref py py-func docutils literal notranslate"><span class="pre">balanced()</span></code></a></p>
+<p>Many useful predefined coefficients are provided: <a class="reference internal" href="#hydrax.image.Coefs.FRACTIONAL" title="hydrax.image.Coefs.FRACTIONAL"><code class="xref py py-attr docutils literal notranslate"><span class="pre">FRACTIONAL</span></code></a>, <a class="reference internal" href="#hydrax.image.Coefs.IMAGENET_SRGB" title="hydrax.image.Coefs.IMAGENET_SRGB"><code class="xref py py-attr docutils literal notranslate"><span class="pre">IMAGENET_SRGB</span></code></a>,
+<a class="reference internal" href="#hydrax.image.Coefs.IMAGENET_SRGB_ALPHA" title="hydrax.image.Coefs.IMAGENET_SRGB_ALPHA"><code class="xref py py-attr docutils literal notranslate"><span class="pre">IMAGENET_SRGB_ALPHA</span></code></a>, <a class="reference internal" href="#hydrax.image.Coefs.balanced" title="hydrax.image.Coefs.balanced"><code class="xref py py-func docutils literal notranslate"><span class="pre">balanced()</span></code></a></p>
 </div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hydrax.image.Coefs.FRACTIONAL">
+<span class="sig-name descname"><span class="pre">FRACTIONAL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#hydrax.image.Coefs" title="hydrax.image.Coefs"><span class="pre">Coefs</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;hydrax.image.Coefs</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#hydrax.image.Coefs.FRACTIONAL" title="Link to this definition">#</a></dt>
+<dd><p>Coefficients to convert sRGB(A) data in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code> to a floating point representation in the range
+<code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hydrax.image.Coefs.IMAGENET_SRGB">
+<span class="sig-name descname"><span class="pre">IMAGENET_SRGB</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#hydrax.image.Coefs" title="hydrax.image.Coefs"><span class="pre">Coefs</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;hydrax.image.Coefs</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#hydrax.image.Coefs.IMAGENET_SRGB" title="Link to this definition">#</a></dt>
+<dd><p>ImageNet sRGB standardization coefficients for the input range of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code> and no alpha channel.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hydrax.image.Coefs.IMAGENET_SRGB_ALPHA">
+<span class="sig-name descname"><span class="pre">IMAGENET_SRGB_ALPHA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#hydrax.image.Coefs" title="hydrax.image.Coefs"><span class="pre">Coefs</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;hydrax.image.Coefs</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#hydrax.image.Coefs.IMAGENET_SRGB_ALPHA" title="Link to this definition">#</a></dt>
+<dd><p>ImageNet sRGBA standardization coefficients for the input range of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code> and alpha output in the range
+<code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code>.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="hydrax.image.Coefs.balanced">
-<span class="sig-name descname"><span class="pre">balanced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hydrax.image.Coefs" title="hydrax.image.Coefs"><span class="pre">Coefs</span></a></span></span><a class="headerlink" href="#hydrax.image.Coefs.balanced" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">balanced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#hydrax.image.Coefs" title="hydrax.image.Coefs"><span class="pre">Coefs</span></a></span></span><a class="headerlink" href="#hydrax.image.Coefs.balanced" title="Link to this definition">#</a></dt>
 <dd><p>Returns a set of coefficients for converting sRGB in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">255]</span></code> to a balanced floating point
 representation in the range <code class="docutils literal notranslate"><span class="pre">[-scale,</span> <span class="pre">scale]</span></code>.</p>
 <dl class="field-list simple">
@@ -321,6 +341,9 @@ representation in the range <code class="docutils literal notranslate"><span cla
             <ul>
 <li><a class="reference internal" href="#">hydrax.image.Coefs</a><ul>
 <li><a class="reference internal" href="#hydrax.image.Coefs"><code class="docutils literal notranslate"><span class="pre">Coefs</span></code></a><ul>
+<li><a class="reference internal" href="#hydrax.image.Coefs.FRACTIONAL"><code class="docutils literal notranslate"><span class="pre">Coefs.FRACTIONAL</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.image.Coefs.IMAGENET_SRGB"><code class="docutils literal notranslate"><span class="pre">Coefs.IMAGENET_SRGB</span></code></a></li>
+<li><a class="reference internal" href="#hydrax.image.Coefs.IMAGENET_SRGB_ALPHA"><code class="docutils literal notranslate"><span class="pre">Coefs.IMAGENET_SRGB_ALPHA</span></code></a></li>
 <li><a class="reference internal" href="#hydrax.image.Coefs.balanced"><code class="docutils literal notranslate"><span class="pre">Coefs.balanced()</span></code></a></li>
 </ul>
 </li>

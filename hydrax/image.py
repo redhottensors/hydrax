@@ -39,8 +39,16 @@ class Coefs:
     __slots__ = ("_coefs", "_cache")
 
     FRACTIONAL: "Coefs"
+    """Coefficients to convert sRGB(A) data in the range ``[0, 255]`` to a floating point representation in the range
+    ``[0.0, 1.0]``."""
+
     IMAGENET_SRGB: "Coefs"
+    """ImageNet sRGB standardization coefficients for the input range of ``[0, 255]`` and no alpha channel."""
+
     IMAGENET_SRGB_ALPHA: "Coefs"
+    """ImageNet sRGBA standardization coefficients for the input range of ``[0, 255]`` and alpha output in the range
+    ``[0.0, 1.0]``.
+    """
 
     def __init__(self, coefs: ArrayLike):
         self._coefs = coefs
@@ -57,8 +65,8 @@ class Coefs:
 
         return coefs
 
-    @lru_cache(maxsize=8)
     @staticmethod
+    @lru_cache(maxsize=8)
     def balanced(scale: float = 1.0, *, alpha: bool = False) -> "Coefs":
         """Returns a set of coefficients for converting sRGB in the range ``[0, 255]`` to a balanced floating point
         representation in the range ``[-scale, scale]``.
@@ -75,22 +83,16 @@ class Coefs:
             return Coefs([[coef, coef, coef], [scale, scale, scale]])
 
 Coefs.FRACTIONAL = Coefs([[255.0], [0.0]])
-"""Coefficients to convert sRGB(A) data in the range ``[0, 255]`` to a floating point representation in the range
-``[0.0, 1.0]``."""
 
 Coefs.IMAGENET_SRGB = Coefs([
     [58.395, 57.120, 57.375],
     [123.675/58.395, 116.280/57.120, 103.530/57.375]
 ])
-"""ImageNet sRGB standardization coefficients for the input range of ``[0, 255]`` and no alpha channel."""
 
 Coefs.IMAGENET_SRGB_ALPHA = Coefs([
     [58.395, 57.120, 57.375, 255.0],
     [123.675/58.395, 116.280/57.120, 103.530/57.375, 0.0]
 ])
-"""ImageNet sRGBA standardization coefficients for the input range of ``[0, 255]`` and alpha output in the range
-``[0.0, 1.0]``.
-"""
 
 _LINEAR_SRGB_TO_LMS = Coefs([
     [0.4122214708, 0.5363325363, 0.0514459929],
